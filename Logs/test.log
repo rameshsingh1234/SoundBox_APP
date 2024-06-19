@@ -1,6 +1,17 @@
-2024-06-19 15:15:04,151 :INFO : API_TEST :***********************API Test Start *****************************
-2024-06-19 15:15:04,151 :INFO : API_TEST :***********************API Request Made *****************************
-2024-06-19 15:15:04,352 :INFO : API_TEST :*********************** Response Received *****************************
-2024-06-19 15:15:04,352 :INFO : API_TEST :Success: Status code is 404 as expected.
-2024-06-19 15:15:04,352 :INFO : API_TEST :*********************** Status Code Asserted *****************************
-2024-06-19 15:15:04,352 :ERROR : API_TEST :Failure: Expected key 'errors' not found in response.
+2024-06-19 15:30:34,974 :INFO : API_TEST :***********************API Test Start *****************************
+2024-06-19 15:30:34,974 :INFO : API_TEST :***********************API Request Made *****************************
+2024-06-19 15:30:35,232 :INFO : API_TEST :*********************** Response is not in JSON format *****************************
+2024-06-19 15:30:35,232 :INFO : API_TEST :<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Error</title>
+</head>
+<body>
+<pre>Cannot POST /payment/invaliduuid123/payments/summary/get</pre>
+</body>
+</html>
+
+2024-06-19 15:30:35,232 :INFO : API_TEST :Success: Status code is 404 as expected.
+2024-06-19 15:30:35,236 :INFO : API_TEST :*********************** Status Code Asserted *****************************
+2024-06-19 15:30:35,236 :INFO : API_TEST :***********************API Test Ends*****************************
