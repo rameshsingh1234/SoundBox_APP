@@ -1,5 +1,5 @@
 Testcase ID,Testcase Type,url,method,headers,payload,expected_status_code,expected_response_keys,expected_responce_body
-TC_Soundbox_API_06,Positive,https://buf90w4388.execute-api.us-east-1.amazonaws.com/payments/23432/summary/get,POST,"{""Content-Type"":""application/json""}","{
+TC_Soundbox_API_06,Positive,http://k8s-paymentm-paymenti-a2c50e0ce0-1109762679.us-east-1.elb.amazonaws.com/payments/23432/summary/get,POST,"{""Content-Type"":""application/json""}","{
   ""date"": ""2024-06-13""
 }",200,"code,data","{
     ""code"": 2000,
@@ -9,7 +9,7 @@ TC_Soundbox_API_06,Positive,https://buf90w4388.execute-api.us-east-1.amazonaws.c
         ""current_date"": ""2024-06-13""
     }
 }"
-TC_Soundbox_API_06-A,negative,https://buf90w4388.execute-api.us-east-1.amazonaws.com/invalid/summary/get,POST,"{""Content-Type"":""application/json""}","{
+TC_Soundbox_API_06-A,negative,http://k8s-paymentm-paymenti-a2c50e0ce0-1109762679.us-east-1.elb.amazonaws.com/invalid/summary/get,POST,"{""Content-Type"":""application/json""}","{
   ""date"": ""2024-06-13""
 }",404,"message,errors","{
     ""message"": ""not found"",
@@ -19,7 +19,7 @@ TC_Soundbox_API_06-A,negative,https://buf90w4388.execute-api.us-east-1.amazonaws
         }
     ]
 }"
-TC_Soundbox_API_06-B,negative,https://buf90w4388.execute-api.us-east-1.amazonaws.com/payment/invaliduuid123/payments/summary/get,POST,"{""Content-Type"":""application/json""}","{
+TC_Soundbox_API_06-B,negative,http://k8s-paymentm-paymenti-a2c50e0ce0-1109762679.us-east-1.elb.amazonaws.com/payment/invaliduuid123/payments/summary/get,POST,"{""Content-Type"":""application/json""}","{
   ""date"": ""2024-06-13""
 }",404,"message,errors","{
     ""message"": ""not found"",
