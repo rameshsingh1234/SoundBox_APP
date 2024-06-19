@@ -54,7 +54,7 @@ jobs:
         GMAIL_USERNAME: ${{secrets.GMAIL_USERNAME}}
         GMAIL_PASSWORD: ${{secrets.GMAIL_PASSWORD}}
 
-        RECIPIENT_EMAIL: nikil56789@gmail.com  # Replace with the recipient's email
+        RECIPIENT_EMAIL: ${{secrets.RECIPIENT_EMAIL}}  # Replace with the recipient's email
 
       run: |
         python Utilities/send_email_script.py $GMAIL_USERNAME $GMAIL_PASSWORD $RECIPIENT_EMAIL
