@@ -6,7 +6,22 @@ import os
 class ReadConfig:
     @staticmethod
     def get_config_path():
-        return os.path.abspath(os.path.join(os.path.dirname(__file__), '../Configure/config.init'))
+        return os.path.abspath(os.path.join(os.path.dirname(__file__), '../Configure/config.ini'))
+
+    @staticmethod
+    def getusername():
+        config = ReadConfig.get_config()
+        return config.get('EMAIL', 'username')
+
+    @staticmethod
+    def getpassword():
+        config = ReadConfig.get_config()
+        return config.get('EMAIL', 'password')
+
+    @staticmethod
+    def getpassword():
+        config = ReadConfig.get_config()
+        return config.get('EMAIL', 'recipient_email')
 
     @staticmethod
     def get_config():
@@ -15,12 +30,8 @@ class ReadConfig:
         if not os.path.exists(config_path):
             raise FileNotFoundError(f"Config file not found: {config_path}")
 
-        with open(config_path, 'r') as file:
-            content = file.read()
-            print(f"Config file content:\n{content}")
-
         config = configparser.ConfigParser()
-        config.read_string(content)
+        config.read(config_path)
         print(f"Config sections: {config.sections()}")
         if 'DEFAULT' in config:
             print(f"Config keys in DEFAULT: {list(config['DEFAULT'].keys())}")

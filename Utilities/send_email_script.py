@@ -3,7 +3,6 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
-import configparser
 
 
 def send_email(username, password, recipient_email):
@@ -21,7 +20,7 @@ def send_email(username, password, recipient_email):
     msg.attach(MIMEText(body, 'plain'))
 
     # Attach the test report file
-    with open('reports/report.html', 'rb') as f:
+    with open('./reports/report.html', 'rb') as f:
         attach = MIMEApplication(f.read(), _subtype="html")
         attach.add_header('Content-Disposition', 'attachment', filename=str("report.html"))
         msg.attach(attach)
@@ -34,12 +33,9 @@ def send_email(username, password, recipient_email):
 
 
 if __name__ == "__main__":
-    config = configparser.ConfigParser()
-    config.read('config.init')
-
-    gmail_username = config['EMAIL']['username']
-    gmail_password = config['EMAIL']['password']
-    recipient_email = config['EMAIL']['recipient_email']
+    gmail_username = sys.argv[1]
+    gmail_password = sys.argv[2]
+    recipient_email = sys.argv[3]
 
     subject = "Mobile automation Test Report"
     body = """
