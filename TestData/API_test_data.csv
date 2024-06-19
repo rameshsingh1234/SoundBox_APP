@@ -1,0 +1,701 @@
+Testcase ID,Testcase Type,url,method,headers,payload,expected_status_code,expected_response_keys,expected_responce_body
+TC_Soundbox_API_001,Positive,http://localhost:8080/users,POST,"{""Content-Type"":""application/json""}","{""mobile_number"":""8375437533""}",200,"otpVerification,code,mobile","{
+  ""otpVerification"": 0,
+  ""code"": 2000,
+  ""mobile"": 0
+}"
+TC_Soundbox_API_01-A,negative,http://localhost:8080/invalidurl,POST,"{""Content-Type"":""application/json""}","{""mobile_number"":""8375437533""}",404,"message,errors","{
+    ""message"": ""not found"",
+    ""errors"": [
+        {
+            ""path"": ""/invalidurl"",
+            ""message"": ""not found""
+        }
+    ]
+}"
+TC_Soundbox_API_01-B,negative,http://localhost:8080/users,POST,"{""Content-Type"":""application/json""}",{},200,"code,message","{
+  ""message"": ""mobile_number field is required"",
+  ""code"": 1000
+}"
+TC_Soundbox_API_01-C,negative,http://localhost:8080/users,GET,"{""Content-Type"":""application/json""}","{""mobile_number"":""8375437533""}",405,"message,errors","{
+    ""message"": ""GET method not allowed"",
+    ""errors"": [
+        {
+            ""path"": ""/users"",
+            ""message"": ""GET method not allowed""
+        }
+    ]
+}"
+TC_Soundbox_API_01-D,negative,http://localhost:8080/users,POST,"{""Content-Type"":""application/json""}","{""mobile_number"":""016789""}",200,"message,code","{
+    ""message"": ""Invalid mobile number"",
+    ""code"": 1000
+}"
+TC_Soundbox_API_01-E,negative,http://localhost:8080/users,POST,"{""Content-Type"":""application/json""}","{
+  ""mobile_number"":""mobileno""
+}",200,"message,code","{
+    ""message"": ""Invalid mobile number"",
+    ""code"": 1000
+}"
+TC_Soundbox_API_01-F,negative,http://localhost:8080/users,POST,"{""Content-Type"":""application/json""}","{""mobile_number"": ""83754375331111""
+ }",200,"message,code","{
+    ""message"": ""mobile_number should not exceed 10"",
+    ""code"": 1000
+}"
+TC_Soundbox_API_02,positive,http://localhost:8080/user/otp,POST,"{""Content-Type"":""application/json""}","{
+  ""mobile_number"": ""1234567890""
+}",200,"code,identification","{
+  ""code"": 2000,
+  ""identification"": ""453453""
+}"
+TC_Soundbox_API_02-A,negative,http://localhost:8080/user/otp,POST,"{""Content-Type"":""application/json""}","{"""":""""}",200,"code,message","{
+          ""code"": 1000,
+          ""message"": ""required field mobile_number""
+        }
+"
+TC_Soundbox_API_02-B,negative,http://localhost:8080/user/otp,POST,"{""Content-Type"":""application/json""}","{
+  ""mobile_number"": """"
+}",200,"code,message","{
+          ""code"": 1000,
+          ""message"": ""mobile number is required""
+        }"
+TC_Soundbox_API_02-C,negative,http://localhost:8080/user/otp,POST,"{""Content-Type"":""application/json""}","{
+  ""mobile_number"": ""123456789""
+}",200,"code,message","{
+          ""code"": 1000,
+          ""message"": ""mobile number should not be less than 10 digits""
+        }"
+TC_Soundbox_API_02-D,negative,http://localhost:8080/user/otp,POST,"{""Content-Type"":""application/json""}","{
+  ""mobile_number"": ""12345678901""
+}",200,"code,message","{
+          ""code"": 1000,
+          ""message"": ""mobile_number maximum 10 number""
+        }"
+TC_Soundbox_API_02-E,negative,http://localhost:8080/user/otp,POST,"{""Content-Type"":""application/json""}","{
+  ""mobile_number"": 23333394
+}",400,"message,errors","{
+    ""message"": ""request.body.mobile_number should be string"",
+    ""errors"": [
+        {
+            ""path"": "".body.mobile_number"",
+            ""message"": ""should be string"",
+            ""errorCode"": ""type.openapi.validation""
+        }
+    ]
+}"
+TC_Soundbox_API_02-F,negative,http://localhost:8080/user,POST,"{""Content-Type"":""application/json""}","{
+  ""mobile_number"": ""765467897""
+}",404,"message,errors","{
+    ""message"": ""not found"",
+    ""errors"": [
+        {
+            ""path"": ""/user"",
+            ""message"": ""not found""
+        }
+    ]
+}"
+TC_Soundbox_API_03,negative,http://localhost:8080/user/otp,PATCH,"{""Content-Type"":""application/json""}","{
+  ""otp"": 123456,
+  ""mobile_number"": ""1234567890"",
+  ""device_id"": ""345343453"",
+  ""identification"": ""234554""
+}",200,"code,message","{
+    ""code"": 2000,
+    ""message"": ""ok""
+}"
+TC_Soundbox_API_03-A,negative,http://localhost:8080/user/invalid,PATCH,"{""Content-Type"":""application/json""}","{
+  ""otp"": 123456,
+  ""mobile_number"": ""1234567890"",
+  ""device_id"": ""345343453"",
+  ""identification"": ""234554""
+}",404,"message,errors","{
+    ""message"": ""not found"",
+    ""errors"": [
+        {
+            ""path"": ""/user/invalid"",
+            ""message"": ""not found""
+        }
+    ]
+}"
+TC_Soundbox_API_03-B,negative,http://localhost:8080/user/otp,PATCH,"{""Content-Type"":""application/json""}","{
+  ""otp"": 123436,
+  ""mobile_number"": ""1234567890"",
+  ""device_id"": ""345343453"",
+  ""identification"": ""234554""
+}",200,"message,code","{
+    ""message"": ""Please enter a valid OTP"",
+    ""code"": 1000
+}"
+TC_Soundbox_API_03-C,negative,http://localhost:8080/user/otp,GET,"{""Content-Type"":""application/json""}","{
+  ""otp"": 123456,
+  ""mobile_number"": ""1234567890"",
+  ""device_id"": ""345343453"",
+  ""identification"": ""234554""
+}",405,"message,errors","{
+    ""message"": ""GET method not allowed"",
+    ""errors"": [
+        {
+            ""path"": ""/user/otp"",
+            ""message"": ""GET method not allowed""
+        }
+    ]
+}"
+TC_Soundbox_API_03-D,negative,http://localhost:8080/user/otp,PATCH,"{""Content-Type"":""application/json""}","{
+  ""otp"": 156,
+  ""mobile_number"": ""1234567890"",
+  ""device_id"": ""345343453"",
+  ""identification"": ""234554""
+}",200,"message,code","{
+    ""code"": 1000,
+    ""message"": ""Please enter a valid OTP""
+}"
+TC_Soundbox_API_03-E,negative,http://localhost:8080/user/otp,PATCH,"{""Content-Type"":""application/json""}","{
+  ""otp"": 123456,
+  ""device_id"": ""345343453"",
+  ""identification"": ""234554""
+}",200,"message,code","{
+    ""message"": ""required field mobile_number"",
+    ""code"": 1000
+}"
+TC_Soundbox_API_03-F,negative,http://localhost:8080/user/otp,PATCH,"{""Content-Type"":""application/json""}","{
+  ""otp"": 123456,
+  ""mobile_number"": ""1234567890"",
+  ""identification"": ""234554""
+}",200,"message,code","{
+    ""message"": ""required field device_id"",
+    ""code"": 1000
+}"
+TC_Soundbox_API_03-G,negative,http://localhost:8080/user/otp,PATCH,"{""Content-Type"":""application/json""}","{
+  ""mobile_number"": ""1234567890"",
+  ""device_id"": ""345343453"",
+  ""identification"": ""234554""
+}",200,"message,code","{
+    ""code"": 1000,
+    ""message"": ""required field otp""
+}"
+TC_Soundbox_API_03-H,negative,http://localhost:8080/user/otp,PATCH,"{""Content-Type"":""application/json""}","{
+  ""otp"": 123456,
+  ""mobile_number"": """",
+  ""device_id"": ""345343453"",
+  ""identification"": ""234554""
+}",200,"message,code","{
+    ""code"": 1000,
+    ""message"": ""Please enter a valid mobile number""
+}"
+TC_Soundbox_API_03-I,negative,http://localhost:8080/user/otp,PATCH,"{""Content-Type"":""application/json""}","{
+  ""otp"": 123456,
+  ""mobile_number"": ""this is number"",
+  ""device_id"": ""345343453"",
+  ""identification"": ""234554""
+}",200,"message,code","{
+    ""code"": 1000,
+    ""message"": ""Please enter a valid mobile number""
+}"
+TC_Soundbox_API_03-J,negative,http://localhost:8080/user/otp,PATCH,"{""Content-Type"":""application/json""}","{
+  ""otp"": 123456,
+  ""mobile_number"": ""1234567890"",
+  ""device_id"": ""345343453"",
+  ""identification"": 234554
+}",400,"message,errors","{
+    ""message"": ""request.body.identification should be string"",
+    ""errors"": [
+        {
+            ""path"": "".body.identification"",
+            ""message"": ""should be string"",
+            ""errorCode"": ""type.openapi.validation""
+        }
+    ]
+}"
+TC_Soundbox_API_03-K,negative,http://localhost:8080/user/otp,PATCH,"{""Content-Type"":""application/json""}","{
+  ""otp"": ""123456"",
+  ""mobile_number"": ""1234567890"",
+  ""device_id"": ""345343453"",
+  ""identification"": ""234554""
+}",400,"message,errors","{
+    ""message"": ""request.body.otp should be integer"",
+    ""errors"": [
+        {
+            ""path"": "".body.otp"",
+            ""message"": ""should be integer"",
+            ""errorCode"": ""type.openapi.validation""
+        }
+    ]
+}"
+TC_Soundbox_API_03-L,negative,http://localhost:8080/user/otp,PATCH,"{""Content-Type"":""application/json""}","{
+  ""otp"": 1234567890,
+  ""mobile_number"": ""1234567890"",
+  ""device_id"": ""345343453"",
+  ""identification"": ""234554""
+}",200,"message,code","{
+    ""code"": 1000,
+    ""message"": ""Please enter a valid OTP""
+}"
+TC_Soundbox_API_04,positive,http://localhost:8080/users/345443/preferences,PUT,"{""Content-Type"":""application/json""}","{
+  ""language"": ""kannada"",
+  ""mute"": ""true""
+}",200,"message,code","{
+    ""code"": 2000,
+    ""message"": ""updated successfully""
+}"
+TC_Soundbox_API_04-A,negative,http://localhost:8080/users/invalid1/preferences,PUT,"{""Content-Type"":""application/json""}","{
+  ""language"": ""kannada"",
+  ""mute"": ""true""
+}",400,"message,errors","{
+    ""message"": ""request.params.uuid should be integer"",
+    ""errors"": [
+        {
+            ""path"": "".params.uuid"",
+            ""message"": ""should be integer"",
+            ""errorCode"": ""type.openapi.validation""
+        }
+    ]
+}"
+TC_Soundbox_API_04-B,negative,http://localhost:8080/users/preferences,PUT,"{""Content-Type"":""application/json""}","{
+  ""language"": ""kannada"",
+  ""mute"": ""true""
+}",404,"message,errors","{
+    ""message"": ""not found"",
+    ""errors"": [
+        {
+            ""path"": ""/users/preferences"",
+            ""message"": ""not found""
+        }
+    ]
+}"
+TC_Soundbox_API_04-C,negative,http://localhost:8080/invalidurl/preferences,PUT,"{""Content-Type"":""application/json""}","{
+  ""language"": ""kannada"",
+  ""mute"": ""true""
+}",404,"message,errors","{
+    ""message"": ""not found"",
+    ""errors"": [
+        {
+            ""path"": ""/invalidurl/preferences"",
+            ""message"": ""not found""
+        }
+    ]
+}"
+TC_Soundbox_API_04-D,negative,http://localhost:8080/users/345443/preferences,PUT,"{""Content-Type"":""application/json""}","{
+  ""mute"": ""true""
+}",200,"message,code","{
+    ""code"": 1000,
+    ""message"": ""required field language""
+}"
+TC_Soundbox_API_04-E,negative,http://localhost:8080/users/345443/preferences,PUT,"{""Content-Type"":""application/json""}","{
+  ""language"": ""Tamil"",
+  ""mute"": ""true""
+}",200,"message,code","{
+    ""code"": 1000,
+    ""message"": ""please enter a valid language""
+}"
+TC_Soundbox_API_04-F,negative,http://localhost:8080/users/345443/preferences,GET,"{""Content-Type"":""application/json""}","{
+  ""language"": ""kannada"",
+  ""mute"": ""true""
+}",405,"message,errors","{
+    ""message"": ""GET method not allowed"",
+    ""errors"": [
+        {
+            ""path"": ""/users/345443/preferences"",
+            ""message"": ""GET method not allowed""
+        }
+    ]
+}"
+TC_Soundbox_API_04-G,negative,http://localhost:8080/users/345443/preferences,PUT,"{""Content-Type"":""application/json""}","{
+  ""language"": 1234,
+  ""mute"": ""true""
+}",400,"message,errors","{
+    ""message"": ""request.body.language should be string"",
+    ""errors"": [
+        {
+            ""path"": "".body.language"",
+            ""message"": ""should be string"",
+            ""errorCode"": ""type.openapi.validation""
+        }
+    ]
+}"
+TC_Soundbox_API_04-H,negative,http://localhost:8080/users/345443/preferences,PUT,"{""Content-Type"":""application/json""}","{
+  ""language"": ""kannada"",
+  ""mute"": 1234
+}",400,"message,errors","{
+    ""message"": ""request.body.mute should be string"",
+    ""errors"": [
+        {
+            ""path"": "".body.mute"",
+            ""message"": ""should be string"",
+            ""errorCode"": ""type.openapi.validation""
+        }
+    ]
+}"
+TC_Soundbox_API_05,Positive,http://localhost:8081/payments/54/summary/get,POST,"{""Content-Type"":""application/json""}","
+{
+  ""date"": ""10/2/2022""
+}",200,"code,data","{
+    ""code"": 2000,
+    ""data"": {
+        ""amount"": 934,
+        ""current_date"": ""10/2/2022"",
+        ""count"": 34
+    }
+}"
+TC_Soundbox_API_05-A,negative,http://localhost:8081/invalid/summary/get,POST,"{""Content-Type"":""application/json""}","
+{
+  ""date"": ""10/2/2022""
+}",404,"message,errors","{
+    ""message"": ""not found"",
+    ""errors"": [
+        {
+            ""path"": ""/invalid/summary/get"",
+            ""message"": ""not found""
+        }
+    ]
+}"
+TC_Soundbox_API_05-B,negative,http://localhost:8081/invaliduuid123/payments/summary/get,POST,"{""Content-Type"":""application/json""}","
+{
+  ""date"": ""10/2/2022""
+}",404,"message,errors","{
+    ""message"": ""not found"",
+    ""errors"": [
+        {
+            ""path"": ""/invaliduuid123/payments/summary/get"",
+            ""message"": ""not found""
+        }
+    ]
+}"
+TC_Soundbox_API_05-C,negative,http://localhost:8081/payments/54/summary/get,POST,"{""Content-Type"":""application/json""}",{},200,"message,code","{
+    ""code"": 1000,
+    ""message"": ""required field date""
+}"
+TC_Soundbox_API_05-D,negative,http://localhost:8081/payments/summary/get,POST,"{""Content-Type"":""application/json""}","
+{
+  ""date"": ""10/2/2022""
+}",400,"message,errors","{
+    ""message"": ""request.params.uuid should be integer"",
+    ""errors"": [
+        {
+            ""path"": "".params.uuid"",
+            ""message"": ""should be integer"",
+            ""errorCode"": ""type.openapi.validation""
+        }
+    ]
+}"
+TC_Soundbox_API_06,Positive,http://localhost:8081/payments/54/get,POST,"{""Content-Type"":""application/json""}","{
+  ""date"": ""10/12/2020""
+}",200,"code,data","{
+    ""code"": 2000,
+    ""data"": {
+        ""current_date"": ""10/12/2020"",
+        ""payments"": ""[{\""id\"":1,\""details\"":{\""payer_name\"":\""abc\"",\""payer_id\"":\""w4r085\"",\""transaction_time\"":\""10/10/2020\"",\""amount\"":23423}},{\""id\"":2,\""details\"":{\""payer_name\"":\""amkf\"",\""payer_id\"":\""sjfdksdf3\"",\""transaction_time\"":\""29/2/2024\"",\""amount\"":2343232}}]""
+    }
+}"
+TC_Soundbox_API_06-A,negative,http://localhost:8081/invalid/payments/54/get,POST,"{""Content-Type"":""application/json""}"," { 
+""date"": ""10/12/2020"" 
+} ",404,"message,errors","{
+    ""message"": ""not found"",
+    ""errors"": [
+        {
+            ""path"": ""/invalid/payments/54/get"",
+            ""message"": ""not found""
+        }
+    ]
+}"
+TC_Soundbox_API_06-B,negative,http://localhost:8081/payments/invalid54/get,POST,"{""Content-Type"":""application/json""}"," { 
+""date"": ""10/12/2020"" 
+} ",400,"message,errors","{
+    ""message"": ""request.params.uuid should be integer"",
+    ""errors"": [
+        {
+            ""path"": "".params.uuid"",
+            ""message"": ""should be integer"",
+            ""errorCode"": ""type.openapi.validation""
+        }
+    ]
+}"
+TC_Soundbox_API_06-C,negative,http://localhost:8081/payments/54/get,POST,"{""Content-Type"":""application/json""}"," {
+} ",200,"message,code","{
+    ""code"": 1000,
+    ""message"": ""required field date""
+}"
+TC_Soundbox_API_06-D,negative,http://localhost:8081/payments/54/get,POST,"{""Content-Type"":""application/json""}"," {
+""date"": ""2022-03-12""
+} ",200,"message,code","{
+    ""code"": 1000,
+    ""message"": ""please enter a valid date""
+}"
+TC_Soundbox_API_06-E,negative,http://localhost:8081/payments/get,POST,"{""Content-Type"":""application/json""}"," { 
+""date"": ""10/12/2020"" 
+} ",404,"message,errors","{
+    ""message"": ""not found"",
+    ""errors"": [
+        {
+            ""path"": ""/payments/get"",
+            ""message"": ""not found""
+        }
+    ]
+}"
+TC_Soundbox_API_06-F,negative,http://localhost:8081/payments/54/get,POST,"{""Content-Type"":""application/json""}"," {
+""date"": 20201012
+} ",400,"message,errors","{
+    ""message"": ""request.body.date should be string"",
+    ""errors"": [
+        {
+            ""path"": "".body.date"",
+            ""message"": ""should be string"",
+            ""errorCode"": ""type.openapi.validation""
+        }
+    ]
+}"
+TC_Soundbox_API_06-G,negative,http://localhost:8081/payments/54/get,POST,"{""Content-Type"":""application/json""}"," {
+""data"":""2022-10-02""
+} ",200,"message,code","{
+    ""code"": 1000,
+    ""message"": ""required field date""
+}"
+TC_Soundbox_API_07,Positive,http://localhost:8081/payments/,POST,"{""Content-Type"":""application/json""}","{
+  ""merchant_mobile"": ""1234567890"",
+  ""payee_vpa"": ""34892edjkncx"",
+  ""datetime"": ""12/10/2020"",
+  ""amount"": 3848492,
+  ""payer_vpa"": ""6437890"",
+  ""payer_name"": ""abc""
+}",200,"message,code","{
+    ""code"": 2000,
+    ""message"": ""successfully received""
+}"
+TC_Soundbox_API_07-A,negative,"http://localhost:8081/payments/invalid/
+",POST,"{""Content-Type"":""application/json""}","{
+""merchant_mobile"": ""1234567890"",
+""payee_vpa"": ""34892edjkncx"",
+""datetime"": ""12/10/2020"",
+""amount"": 3848492,
+""payer_vpa"": ""6437890"",
+""payer_name"": ""abc""
+}",404,"message,errors","{
+    ""message"": ""not found"",
+    ""errors"": [
+        {
+            ""path"": ""/payments/invalid/%0A"",
+            ""message"": ""not found""
+        }
+    ]
+}"
+TC_Soundbox_API_07-B,negative,http://localhost:8081/payments,POST,"{""Content-Type"":""application/json""}","{
+""merchant_mobile"": ""0123456789"",
+""payee_vpa"": ""34892edjkncx"",
+""datetime"": ""12/10/2020"",
+""amount"": 3848492,
+""payer_vpa"": ""6437890"",
+""payer_name"": ""abc""
+}",200,"message,code","{
+    ""code"": 1000,
+    ""message"": ""please enter a valid merchant_mobile""
+}"
+TC_Soundbox_API_07-C,negative,http://localhost:8081/payments,POST,"{""Content-Type"":""application/json""}","{
+""merchant_mobile"": ""1234567890"",
+""payee_vpa"": ""34892edjkncx"",
+""datetime"": ""2020-02-10"",
+""amount"": 3848492,
+""payer_vpa"": ""6437890"",
+""payer_name"": ""abc""
+}",200,"message,code","{
+    ""code"": 1000,
+    ""message"": ""please enter a valid datetime""
+}"
+TC_Soundbox_API_07-D,negative,http://localhost:8081/payments,POST,"{""Content-Type"":""application/json""}","{
+""merchant_mobile"": ""1234567890"",
+""payee_vpa"": ""34892invalid"",
+""datetime"": ""12/10/2020"",
+""amount"": 3848492,
+""payer_vpa"": ""6437890"",
+""payer_name"": ""abc""
+}",200,"message,code","{
+    ""code"": 1000,
+    ""message"": ""please enter a valid payee_vpa""
+}"
+TC_Soundbox_API_07-E,negative,http://localhost:8081/payments,POST,"{""Content-Type"":""application/json""}","{
+  ""merchant_mobile"": ""1234567890"",
+  ""payee_vpa"": ""3333333ddddd"",
+  ""datetime"": ""12/10/2020"",
+  ""amount"": 3848492,
+  ""payer_vpa"": ""6437890""
+}",200,"message,code","{
+    ""code"": 1000,
+    ""message"": ""required field payer_name""
+}"
+TC_Soundbox_API_07-F,negative,http://localhost:8081/payments,POST,"{""Content-Type"":""application/json""}","{
+""merchant_mobile"": ""1234567890"",
+""payee_vpa"": ""34892edjkncx"",
+""datetime"": ""12/10/2020"",
+""amount"": 3848492,
+""payer_name"": ""abc""
+}",200,"message,code","{
+    ""code"": 1000,
+    ""message"": ""required field payer_vpa""
+}"
+TC_Soundbox_API_07-G,negative,http://localhost:8081/payments,POST,"{""Content-Type"":""application/json""}","{
+  ""merchant_mobile"": ""1234567890"",
+  ""payee_vpa"": ""34892edjkncx"",
+  ""amount"": 3848492,
+  ""payer_vpa"": ""6437890"",
+  ""payer_name"": ""abc""
+}",200,"message,code","{
+    ""code"": 1000,
+    ""message"": ""required field datetime""
+}"
+TC_Soundbox_API_07-H,negative,http://localhost:8081/payments,POST,"{""Content-Type"":""application/json""}","{
+  ""payee_vpa"": ""34892edjkncx"",
+  ""datetime"": ""12/10/2020"",
+  ""amount"": 3848492,
+  ""payer_vpa"": ""6437890"",
+  ""payer_name"": ""abc""
+}",200,"message,code","{
+    ""code"": 1000,
+    ""message"": ""required field merchant_mobile""
+}"
+TC_Soundbox_API_07-I,negative,http://localhost:8081/payments,POST,"{""Content-Type"":""application/json""}","{
+  ""merchant_mobile"": 9082023284,
+  ""payee_vpa"": ""34892edjkncx"",
+  ""datetime"": ""12/10/2020"",
+  ""amount"": 3848492,
+  ""payer_vpa"": ""6437890"",
+  ""payer_name"": ""abc""
+}",400,"message,errors","{
+    ""message"": ""request.body.merchant_mobile should be string"",
+    ""errors"": [
+        {
+            ""path"": "".body.merchant_mobile"",
+            ""message"": ""should be string"",
+            ""errorCode"": ""type.openapi.validation""
+        }
+    ]
+}"
+TC_Soundbox_API_07-J,negative,http://localhost:8081/payments,POST,"{""Content-Type"":""application/json""}","{
+""merchant_mobile"": ""9082023284"", ""payee_vpa"": 34892, ""datetime"": ""12/10/2020"", ""amount"": 3848492, ""payer_vpa"": ""6437890"", ""payer_name"": ""abc"" 
+}",400,"message,errors","{
+    ""message"": ""request.body.payee_vpa should be string"",
+    ""errors"": [
+        {
+            ""path"": "".body.payee_vpa"",
+            ""message"": ""should be string"",
+            ""errorCode"": ""type.openapi.validation""
+        }
+    ]
+}"
+TC_Soundbox_API_07-K,negative,http://localhost:8081/payments,POST,"{""Content-Type"":""application/json""}","{ 
+""merchant_mobile"": ""9082023284"", ""payee_vpa"": ""34892edjkncx"", ""datetime"": 12102020, ""amount"": 3848492, ""payer_vpa"": ""6437890"", ""payer_name"": ""abc""
+}",400,"message,errors","{
+    ""message"": ""request.body.datetime should be string"",
+    ""errors"": [
+        {
+            ""path"": "".body.datetime"",
+            ""message"": ""should be string"",
+            ""errorCode"": ""type.openapi.validation""
+        }
+    ]
+}"
+TC_Soundbox_API_07-L,negative,http://localhost:8081/payments,POST,"{""Content-Type"":""application/json""}","{ 
+""merchant_mobile"": ""9082023284"", ""payee_vpa"": ""34892edjkncx"", ""datetime"": ""12/10/2020"", ""amount"": ""3848492"", ""payer_vpa"": ""6437890"", ""payer_name"": ""abc""
+}",400,"message,errors","{
+    ""message"": ""request.body.amount should be integer"",
+    ""errors"": [
+        {
+            ""path"": "".body.amount"",
+            ""message"": ""should be integer"",
+            ""errorCode"": ""type.openapi.validation""
+        }
+    ]
+}"
+TC_Soundbox_API_07-M,negative,http://localhost:8081/payments,POST,"{""Content-Type"":""application/json""}","{ 
+""merchant_mobile"": ""9082023284"", ""payee_vpa"": ""34892edjkncx"", ""datetime"": ""12/10/2020"", ""amount"": 3848492, ""payer_vpa"": 6437890, ""payer_name"": ""abc""
+}",400,"message,errors","{
+    ""message"": ""request.body.payer_vpa should be string"",
+    ""errors"": [
+        {
+            ""path"": "".body.payer_vpa"",
+            ""message"": ""should be string"",
+            ""errorCode"": ""type.openapi.validation""
+        }
+    ]
+}"
+TC_Soundbox_API_07-N,negative,http://localhost:8081/payments,POST,"{""Content-Type"":""application/json""}","{ 
+""merchant_mobile"": ""9082023284"", ""payee_vpa"": ""34892edjkncx"", ""datetime"": ""12/10/2020"", ""amount"": 3848492, ""payer_vpa"": ""6437890"", ""payer_name"": 123 
+}",400,"message,errors","{
+    ""message"": ""request.body.payer_name should be string"",
+    ""errors"": [
+        {
+            ""path"": "".body.payer_name"",
+            ""message"": ""should be string"",
+            ""errorCode"": ""type.openapi.validation""
+        }
+    ]
+}"
+TC_Soundbox_API_08,Positive,http://localhost:8080/user/secrets,POST,"{""Content-Type"":""application/json""}","{
+  ""mobile_number"": ""1234567890"",
+  ""mpin"": 123456,
+  ""user_fcm_token"": ""23dsjfvmfd vdfnvi34543546nvnkkkkkk dbffns dm fjvndfgdfsdf""
+}",200,"code,data","{
+    ""code"": 2000,
+    ""data"": {
+        ""access_token"": ""iVBORw0KGgoAAAANSUhEUgAAAlgAAAQaCAIAAAAQRJHWAACAAElEQVR42uzdebQV1Z33/ /vHs1avleTX/azn6d/KahXBCZO2FaJJJ4b8YkfMk8e222hit9HE2CYYTdoMKlwVEASTiKjgEHECUQ ERZXAAHBhFRFBEAQ0oMyhXLncegAt3+H3P3"",
+        ""refresh_token"": ""iVBORw0KGgoAAAANSUhEUgAAAlgAAAQaCAIAAAAQRJHWAACAAElEQVR42uzdebQV1Z33/ /vHs1avleTX/azn6d/KahXBCZO2FaJJJ4b8YkfMk8e222hit9HE2CYYTdoMKlwVEASTiKjgEHECUQ ERZXAAHBhFRFBEAQ0oMyhXLncegAt3+H3P3"",
+        ""preferences"": {
+            ""language"": ""en"",
+            ""mute"": ""true""
+        },
+        ""customer_vpa"": ""JSFidb012345678bd12345p6128125ded45"",
+        ""customer_name"": ""abc"",
+        ""mobile_number"": ""1234567890"",
+        ""uuid"": 12,
+        ""base64qrcode"": ""iVBORw0KGgoAAAANSUhEUgAAAlgAAAQaCAIAAAAQRJHWAACAAElEQVR42uzdebQV1Z33/ /vHs1avleTX/azn6d/KahXBCZO2FaJJJ4b8YkfMk8e222hit9HE2CYYTdoMKlwVEASTiKjgEHECUQ ERZXAAHBhFRFBEAQ0oMyhXLncegAt3+H3P3""
+    }
+}"
+TC_Soundbox_API_08-A,negative,http://localhost:8080/user/secrets,POST,"{""Content-Type"":""application/json""}","{
+  ""mpin"": 123456,
+  ""user_fcm_token"": ""23dsjfvmfd vdfnvi34543546nvnkkkkkk dbffns dm fjvndfgdfsdf""
+}",200,"message,code","{
+    ""code"": 1000,
+    ""message"": ""required field mobile_number""
+}"
+TC_Soundbox_API_08-B,negative,http://localhost:8080/user/secrets,POST,"{""Content-Type"":""application/json""}","{
+  ""mobile_number"": ""1234567890"",
+  ""user_fcm_token"": ""23dsjfvmfd vdfnvi34543546nvnkkkkkk dbffns dm fjvndfgdfsdf""
+}",200,"message,code","{
+    ""code"": 1000,
+    ""message"": ""required field mpin""
+}"
+TC_Soundbox_API_08-C,negative,http://localhost:8080/user/secrets,POST,"{""Content-Type"":""application/json""}","{
+  ""mobile_number"": ""1234567890"",
+  ""mpin"": 12432
+}",200,"message,code","{
+    ""code"": 1000,
+    ""message"": ""required field user_fcm_token""
+}"
+TC_Soundbox_API_08-D,negative,http://localhost:8080/user/secrets,POST,"{""Content-Type"":""application/json""}","{
+  ""mobile_number"": ""235435656"",
+  ""mpin"": 12432,
+  ""user_fcm_token"": ""23dsjfvmfd vdfnvi34543546nvnkkkkkk dbffns dm fjvndfgdfsdf""
+}",200,"message,code","{
+    ""code"": 1000,
+    ""message"": ""please enter a valid mobile_number""
+}"
+TC_Soundbox_API_08-E,negative,http://localhost:8080/user/secrets,POST,"{""Content-Type"":""application/json""}","{
+  ""mobile_number"": ""12345678901"",
+  ""mpin"": 12432,
+  ""user_fcm_token"": ""23dsjfvmfd vdfnvi34543546nvnkkkkkk dbffns dm fjvndfgdfsdf""
+}",200,"message,code","{
+    ""code"": 1000,
+    ""message"": ""please enter a valid mobile_number""
+}"
+TC_Soundbox_API_08-F,negative,http://localhost:8080/user/secrets,POST,"{""Content-Type"":""application/json""}","{
+  ""mobile_number"": ""1234567890"",
+  ""mpin"": 1242,
+  ""user_fcm_token"": ""23dsjfvmfd vdfnvi34543546nvnkkkkkk dbffns dm fjvndfgdfsdf""
+}",200,"message,code","{
+    ""code"": 1000,
+    ""message"": ""please enter a valid mpin""
+}"
+TC_Soundbox_API_08-G,Positive,http://localhost:8080/user/secrets,POST,"{""Content-Type"":""application/json""}","{
+  ""mobile_number"": ""1234567890"",
+  ""mpin"": 123456,
+  ""user_fcm_token"": ""23dsjfvmfd vdf fjvndfgdfsdf""
+}",200,"code,message","{
+    ""code"": 1000,
+    ""message"": ""please enter valid user_fcm_token""
+}"

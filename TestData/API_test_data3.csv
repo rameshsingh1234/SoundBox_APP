@@ -1,0 +1,40 @@
+Testcase ID,Testcase Type,url,method,headers,payload,expected_status_code,expected_response_keys,expected_responce_body
+TC_Soundbox_API_001,Positive,http://localhost:8082/users,POST,"{""Content-Type"":""application/json""}","{""mobile"":8234536472}",200,"otpVerification,code,mobile","{
+    ""otpVerification"": 0,
+    ""code"": 2000,
+    ""mobile"": 0
+}"
+TC_Soundbox_API_002,negative,http://localhost:8082/users,POST,"{""Content-Type"":""application/json""}","{
+    ""mobile_number"":""3746700089""
+}",400,"message,errors","{
+    ""message"": ""request.body.mobile_number should be integer"",
+    ""errors"": [
+        {
+            ""path"": "".body.mobile_number"",
+            ""message"": ""should be integer"",
+            ""errorCode"": ""type.openapi.validation""
+        }
+    ]
+}"
+TC_Soundbox_API_003,negative,http://localhost:8082/invalidurl,POST,"{""Content-Type"":""application/json""}","{""mobile"":8234536472}",404,"message,errors","{
+    ""message"": ""not found"",
+    ""errors"": [
+        {
+            ""path"": ""/invalidurl"",
+            ""message"": ""not found""
+        }
+    ]
+}"
+TC_Soundbox_API_004,negative,http://localhost:8082/users,GET,"{""Content-Type"":""application/json""}","{""mobile"":8234536472}",405,"message,errors","{
+    ""message"": ""GET method not allowed"",
+    ""errors"": [
+        {
+            ""path"": ""/users"",
+            ""message"": ""GET method not allowed""
+        }
+    ]
+}"
+TC_Soundbox_API_005,Positive,http://localhost:8082/user/otp,POST,"{""Content-Type"":""application/json""}","{""mobile"":8234536472}",200,"code,identification","{
+    ""code"": 2000,
+    ""identification"": ""453453""
+}"
