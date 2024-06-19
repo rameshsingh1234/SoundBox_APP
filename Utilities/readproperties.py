@@ -6,7 +6,7 @@ import os
 class ReadConfig:
     @staticmethod
     def get_config_path():
-        return os.path.abspath(os.path.join(os.path.dirname(__file__), '../Configure/config.ini'))
+        return os.path.abspath(os.path.join(os.path.dirname(__file__), '../Configure/config.init'))
 
     @staticmethod
     def getusername():
