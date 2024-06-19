@@ -1,8 +1,26 @@
-import sys
+import configparser
 import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
+import os
+
+
+class ReadConfig:
+    @staticmethod
+    def get_config_path():
+        return os.path.abspath(os.path.join(os.path.dirname(__file__), '../Configure/config.init'))
+
+    @staticmethod
+    def get_config():
+        config_path = ReadConfig.get_config_path()
+        print(f"Reading config file from: {config_path}")
+        if not os.path.exists(config_path):
+            raise FileNotFoundError(f"Config file not found: {config_path}")
+
+        config = configparser.ConfigParser()
+        config.read(config_path)
+        return config
 
 
 def send_email(username, password, recipient_email):
@@ -22,26 +40,26 @@ def send_email(username, password, recipient_email):
     # Attach the test report file
     with open('./reports/report.html', 'rb') as f:
         attach = MIMEApplication(f.read(), _subtype="html")
-        attach.add_header('Content-Disposition', 'attachment', filename=str("report.html"))
+        attach.add_header('Content-Disposition', 'attachment', filename="report.html")
         msg.attach(attach)
 
     # Send the email
-    with smtplib.SMTP('smtp.gmail.com', 587) as server:
-        server.starttls()
-        server.login(username, password)
-        server.sendmail(sender_email, receiver_email, msg.as_string())
+    try:
+        with smtplib.SMTP('smtp.gmail.com', 587) as server:
+            server.starttls()
+            print("Logging in...")
+            server.login(username, password)
+            print("Sending email...")
+            server.sendmail(sender_email, receiver_email, msg.as_string())
+            print("Email sent successfully.")
+    except smtplib.SMTPAuthenticationError as e:
+        print(f"SMTP Authentication Error: {e.smtp_code} - {e.smtp_error.decode()}")
 
 
 if __name__ == "__main__":
-    gmail_username = sys.argv[1]
-    gmail_password = sys.argv[2]
-    recipient_email = sys.argv[3]
-
-    subject = "Mobile automation Test Report"
-    body = """
-    Hi there,
-    Here's the test report for the latest test run.
-    Please find the attached report for more details.
-    """
+    config = ReadConfig.get_config()
+    gmail_username = config['EMAIL']['username']
+    gmail_password = config['EMAIL']['password']
+    recipient_email = config['EMAIL']['recipient_email']
 
     send_email(gmail_username, gmail_password, recipient_email)
