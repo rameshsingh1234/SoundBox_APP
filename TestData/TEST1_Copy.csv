@@ -1,0 +1,12 @@
+Testcase ID,Testcase Type,url,method,headers,payload,expected_status_code,expected_response_keys,expected_responce_body
+TC_Soundbox_API_06-B,negative,https://su5jskzp0i.execute-api.ap-south-1.amazonaws.com/payment/invaliduuid123/payments/summary/get,POST,"{""Content-Type"":""application/json""}","{
+  ""date"": ""2024-06-13""
+}",404,"message,errors","{
+    ""message"": ""not found"",
+    ""errors"": [
+        {
+            ""path"": ""/invaliduuid123/payments/summary/get"",
+            ""message"": ""not found""
+        }
+    ]
+}"

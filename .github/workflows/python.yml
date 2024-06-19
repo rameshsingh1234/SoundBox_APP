@@ -26,7 +26,7 @@ jobs:
       run : ls
 
     - name : test1
-      run : cd /home/runner/work/SoundBox_APP/SoundBox_APP/
+      run : cd /home/runner/work/SoundBox_APP/
 
 
 
