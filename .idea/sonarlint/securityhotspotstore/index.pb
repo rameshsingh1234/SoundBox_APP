@@ -389,3 +389,5 @@ G.idea/sonarlint/issuestore/d/1/d14cfce755b0c90b517e77467879808c5d561511,0\c\0c
 Q.idea/sonarlint/securityhotspotstore/d/1/d14cfce755b0c90b517e77467879808c5d561511,a\4\a4de17fbdf829a850e631356e3f90e136451fdc1
 G
 TestData/TEST1_Copy.csv,6\9\693fb6795442d355153981b764d1b5daa08d2ffc
+N
+Utilities/send_email_script.py,9\a\9acd78dfeff1c3ce14f72a61c42d4e46d8dbcb2e

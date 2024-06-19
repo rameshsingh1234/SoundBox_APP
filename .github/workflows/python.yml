@@ -38,20 +38,20 @@ jobs:
 
 
 
-#test1
+#test
 
-#    - name: Send Email Report
-#      uses: actions/upload-artifact@v2
-#      with:
-#        name: Test Report
-#        path: ./reports/loginpage.html
-##
-#    - name: Configure Gmail and Send Email
-#      env:
-#        GMAIL_USERNAME: ${{secrets.GMAIL_USERNAME}}
-#        GMAIL_PASSWORD: ${{secrets.GMAIL_PASSWORD}}
+    - name: Send Email Report
+      uses: actions/upload-artifact@v2
+      with:
+        name: Test Report
+        path: reports/report.html
 #
-#        RECIPIENT_EMAIL: kiran.sv@tibilsolutions.com  # Replace with the recipient's email
-#
-#      run: |
-#        python reports/send_email_script.py $GMAIL_USERNAME $GMAIL_PASSWORD $RECIPIENT_EMAIL
+    - name: Configure Gmail and Send Email
+      env:
+        GMAIL_USERNAME: ${{secrets.GMAIL_USERNAME}}
+        GMAIL_PASSWORD: ${{secrets.GMAIL_PASSWORD}}
+
+        RECIPIENT_EMAIL: nikil56789@gmail.com  # Replace with the recipient's email
+
+      run: |
+        python reports/send_email_script.py $GMAIL_USERNAME $GMAIL_PASSWORD $RECIPIENT_EMAIL
