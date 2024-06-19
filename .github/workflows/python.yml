@@ -20,7 +20,8 @@ jobs:
         pip install -r requirements.txt
 
     - name: test directory
-      run : pwd
+      run : cd ../
+
 
     - name: Run Pytest
 
