@@ -3,5 +3,5 @@ addopts = -vs -rf --html-report=./Report/report --title='PYTEST REPORT'
 
 [DEFAULT]
 LogsDirectory = ../Logs
-CSVFilePath = ../TestData/TEST1_Copy.csv
+CSVFilePath = ../TestData/TEST1.csv
 
