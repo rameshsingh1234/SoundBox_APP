@@ -5,7 +5,7 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 import os
 
-
+#test
 class ReadConfig:
     @staticmethod
     def get_config_path():
