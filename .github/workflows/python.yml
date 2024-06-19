@@ -45,6 +45,9 @@ jobs:
       with:
         name: Test Report
         path: reports/report.html
+
+    - name: test1
+      run: cd /home/runner/work/SoundBox_APP/
 #
     - name: Configure Gmail and Send Email
       env:
