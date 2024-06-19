@@ -6,6 +6,6 @@ LogsDirectory = ../Logs
 CSVFilePath = ../TestData/TEST1.csv
 
 [EMAIL]
-username = ramesh.singh@tibilsolutions.com
-password = MYiphone@123
-recipient_email = nikil56789@gmail.com
+username = testingemail2428@gmail.com
+password = Testingemail@123
+recipient_email = ramesh.singh@tibilsolutions.com
