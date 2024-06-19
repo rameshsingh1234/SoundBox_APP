@@ -18,7 +18,12 @@ jobs:
     - name: Install dependencies
       run: |
         pip install -r requirements.txt
+
+    - name: test directory
+      run : pwd
+
     - name: Run Pytest
+
 
       run: pytest -v -s --capture=tee-sys ./TestScript/Test_app.py --html=./reports/report.html
 
