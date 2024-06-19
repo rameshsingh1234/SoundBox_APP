@@ -2,5 +2,5 @@
 addopts = -vs -rf --html-report=./Report/report --title='PYTEST REPORT'
 
 [DEFAULT]
-LogsDirectory = C:/Users/RAMESH SINGH/PycharmProjects/SoundBox_APP/Logs
-CSVFilePath = C:/Users/RAMESH SINGH/PycharmProjects/SoundBox_APP/TestData/TEST1_Copy.csv
+LogsDirectory = ../Logs
+CSVFilePath = ../TestData/TEST1_Copy.csv

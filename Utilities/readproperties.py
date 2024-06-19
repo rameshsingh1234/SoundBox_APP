@@ -2,23 +2,28 @@ import configparser
 import csv
 import os
 
-
 class ReadConfig:
     @staticmethod
     def get_config_path():
         return os.path.join(os.path.dirname(__file__), '../Configure/config.init')
 
     @staticmethod
-    def get_logs_directory():
+    def get_config():
         config = configparser.ConfigParser()
         config.read(ReadConfig.get_config_path())
-        return config['DEFAULT']['LogsDirectory']
+        return config
+
+    @staticmethod
+    def get_logs_directory():
+        config = ReadConfig.get_config()
+        logs_directory = config['DEFAULT']['LogsDirectory']
+        return os.path.abspath(os.path.join(os.path.dirname(ReadConfig.get_config_path()), logs_directory))
 
     @staticmethod
     def get_csv_file_path():
-        config = configparser.ConfigParser()
-        config.read(ReadConfig.get_config_path())
-        return config['DEFAULT']['CSVFilePath']
+        config = ReadConfig.get_config()
+        csv_file_path = config['DEFAULT']['CSVFilePath']
+        return os.path.abspath(os.path.join(os.path.dirname(ReadConfig.get_config_path()), csv_file_path))
 
     @staticmethod
     def read_csv(file_path):
@@ -26,7 +31,6 @@ class ReadConfig:
             csv_reader = csv.DictReader(csvfile)
             data = [row for row in csv_reader]
         return data
-
 
 # Usage example
 if __name__ == "__main__":
