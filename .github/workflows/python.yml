@@ -47,8 +47,7 @@ jobs:
         path: reports/report.html
 
 
-#    - name: Test1
-#      run: cd /home/runner/work/SoundBox_APP/
+
     - name: Configure Gmail and Send Email
       env:
         GMAIL_USERNAME: ${{secrets.GMAIL_USERNAME}}

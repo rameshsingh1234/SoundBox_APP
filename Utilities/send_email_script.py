@@ -5,7 +5,8 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 import os
 
-#test
+
+# test
 class ReadConfig:
     @staticmethod
     def get_config_path():
@@ -24,8 +25,8 @@ class ReadConfig:
 
 
 def send_email(username, password, recipient_email):
-    subject = "Selenium Test Execution Report"
-    body = "Please find the attached test execution report."
+    subject = "API Test Execution Report"
+    body = "Please find the attached Test execution report."
 
     sender_email = username
     receiver_email = recipient_email
