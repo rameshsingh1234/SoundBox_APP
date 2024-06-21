@@ -1,88 +1,118 @@
-2024-06-19 20:21:10,887 :INFO : API_TEST :***********************API Test Start *****************************
-2024-06-19 20:21:10,887 :INFO : API_TEST :***********************API Request Made *****************************
-2024-06-19 20:21:12,615 :INFO : API_TEST :*********************** Response Received *****************************
-2024-06-19 20:21:12,615 :INFO : API_TEST :Success: Status code is 200 as expected.
-2024-06-19 20:21:12,615 :INFO : API_TEST :*********************** Status Code Asserted *****************************
-2024-06-19 20:21:12,615 :INFO : API_TEST :Success: All expected keys ['code', 'data'] found in response.
-2024-06-19 20:21:12,618 :INFO : API_TEST :***********************Response Keys Asserted*****************************
-2024-06-19 20:21:12,619 :INFO : API_TEST :Success: Response body matches expected response.
-2024-06-19 20:21:12,619 :INFO : API_TEST :***********************Response Body Asserted*****************************
-2024-06-19 20:21:12,619 :INFO : API_TEST :***********************API Test Ends*****************************
-2024-06-19 20:21:12,623 :INFO : API_TEST :***********************API Test Start *****************************
-2024-06-19 20:21:12,623 :INFO : API_TEST :***********************API Request Made *****************************
-2024-06-19 20:21:13,179 :INFO : API_TEST :*********************** Response is not in JSON format *****************************
-2024-06-19 20:21:13,179 :INFO : API_TEST :
-2024-06-19 20:21:13,179 :INFO : API_TEST :Success: Status code is 404 as expected.
-2024-06-19 20:21:13,179 :INFO : API_TEST :*********************** Status Code Asserted *****************************
-2024-06-19 20:21:13,179 :INFO : API_TEST :***********************API Test Ends*****************************
-2024-06-19 20:21:13,184 :INFO : API_TEST :***********************API Test Start *****************************
-2024-06-19 20:21:13,184 :INFO : API_TEST :***********************API Request Made *****************************
-2024-06-19 20:21:13,740 :INFO : API_TEST :*********************** Response is not in JSON format *****************************
-2024-06-19 20:21:13,741 :INFO : API_TEST :
-2024-06-19 20:21:13,741 :INFO : API_TEST :Success: Status code is 404 as expected.
-2024-06-19 20:21:13,741 :INFO : API_TEST :*********************** Status Code Asserted *****************************
-2024-06-19 20:21:13,741 :INFO : API_TEST :***********************API Test Ends*****************************
-2024-06-19 20:21:13,745 :INFO : API_TEST :***********************API Test Start *****************************
-2024-06-19 20:21:13,745 :INFO : API_TEST :***********************API Request Made *****************************
-2024-06-19 20:21:15,276 :INFO : API_TEST :*********************** Response Received *****************************
-2024-06-19 20:21:15,276 :INFO : API_TEST :Success: Status code is 200 as expected.
-2024-06-19 20:21:15,276 :INFO : API_TEST :*********************** Status Code Asserted *****************************
-2024-06-19 20:21:15,276 :INFO : API_TEST :Success: All expected keys ['message', 'code'] found in response.
-2024-06-19 20:21:15,276 :INFO : API_TEST :***********************Response Keys Asserted*****************************
-2024-06-19 20:21:15,276 :INFO : API_TEST :Success: Response body matches expected response.
-2024-06-19 20:21:15,276 :INFO : API_TEST :***********************Response Body Asserted*****************************
-2024-06-19 20:21:15,276 :INFO : API_TEST :***********************API Test Ends*****************************
-2024-06-19 20:21:15,279 :INFO : API_TEST :***********************API Test Start *****************************
-2024-06-19 20:21:15,279 :INFO : API_TEST :***********************API Request Made *****************************
-2024-06-19 20:21:16,095 :INFO : API_TEST :*********************** Response Received *****************************
-2024-06-19 20:21:16,095 :INFO : API_TEST :Success: Status code is 200 as expected.
-2024-06-19 20:21:16,095 :INFO : API_TEST :*********************** Status Code Asserted *****************************
-2024-06-19 20:21:16,095 :INFO : API_TEST :Success: All expected keys ['message', 'code'] found in response.
-2024-06-19 20:21:16,095 :INFO : API_TEST :***********************Response Keys Asserted*****************************
-2024-06-19 20:21:16,095 :INFO : API_TEST :Success: Response body matches expected response.
-2024-06-19 20:21:16,096 :INFO : API_TEST :***********************Response Body Asserted*****************************
-2024-06-19 20:21:16,096 :INFO : API_TEST :***********************API Test Ends*****************************
-2024-06-19 20:21:16,099 :INFO : API_TEST :***********************API Test Start *****************************
-2024-06-19 20:21:16,099 :INFO : API_TEST :***********************API Request Made *****************************
-2024-06-19 20:21:16,916 :INFO : API_TEST :*********************** Response Received *****************************
-2024-06-19 20:21:16,917 :INFO : API_TEST :Success: Status code is 200 as expected.
-2024-06-19 20:21:16,917 :INFO : API_TEST :*********************** Status Code Asserted *****************************
-2024-06-19 20:21:16,918 :INFO : API_TEST :Success: All expected keys ['code', 'data'] found in response.
-2024-06-19 20:21:16,918 :INFO : API_TEST :***********************Response Keys Asserted*****************************
-2024-06-19 20:21:16,919 :INFO : API_TEST :Success: Response body matches expected response.
-2024-06-19 20:21:16,920 :INFO : API_TEST :***********************Response Body Asserted*****************************
-2024-06-19 20:21:16,920 :INFO : API_TEST :***********************API Test Ends*****************************
-2024-06-19 20:21:16,927 :INFO : API_TEST :***********************API Test Start *****************************
-2024-06-19 20:21:16,927 :INFO : API_TEST :***********************API Request Made *****************************
-2024-06-19 20:21:17,446 :INFO : API_TEST :*********************** Response is not in JSON format *****************************
-2024-06-19 20:21:17,446 :INFO : API_TEST :
-2024-06-19 20:21:17,447 :INFO : API_TEST :Success: Status code is 404 as expected.
-2024-06-19 20:21:17,447 :INFO : API_TEST :*********************** Status Code Asserted *****************************
-2024-06-19 20:21:17,447 :INFO : API_TEST :***********************API Test Ends*****************************
-2024-06-19 20:21:17,449 :INFO : API_TEST :***********************API Test Start *****************************
-2024-06-19 20:21:17,449 :INFO : API_TEST :***********************API Request Made *****************************
-2024-06-19 20:21:18,253 :INFO : API_TEST :*********************** Response Received *****************************
-2024-06-19 20:21:18,253 :INFO : API_TEST :Success: Status code is 200 as expected.
-2024-06-19 20:21:18,254 :INFO : API_TEST :*********************** Status Code Asserted *****************************
-2024-06-19 20:21:18,254 :INFO : API_TEST :Success: All expected keys ['message', 'code'] found in response.
-2024-06-19 20:21:18,254 :INFO : API_TEST :***********************Response Keys Asserted*****************************
-2024-06-19 20:21:18,254 :INFO : API_TEST :Success: Response body matches expected response.
-2024-06-19 20:21:18,254 :INFO : API_TEST :***********************Response Body Asserted*****************************
-2024-06-19 20:21:18,254 :INFO : API_TEST :***********************API Test Ends*****************************
-2024-06-19 20:21:18,259 :INFO : API_TEST :***********************API Test Start *****************************
-2024-06-19 20:21:18,259 :INFO : API_TEST :***********************API Request Made *****************************
-2024-06-19 20:21:19,066 :INFO : API_TEST :*********************** Response Received *****************************
-2024-06-19 20:21:19,066 :INFO : API_TEST :Success: Status code is 200 as expected.
-2024-06-19 20:21:19,067 :INFO : API_TEST :*********************** Status Code Asserted *****************************
-2024-06-19 20:21:19,067 :INFO : API_TEST :Success: All expected keys ['message', 'code'] found in response.
-2024-06-19 20:21:19,068 :INFO : API_TEST :***********************Response Keys Asserted*****************************
-2024-06-19 20:21:19,068 :INFO : API_TEST :Success: Response body matches expected response.
-2024-06-19 20:21:19,069 :INFO : API_TEST :***********************Response Body Asserted*****************************
-2024-06-19 20:21:19,069 :INFO : API_TEST :***********************API Test Ends*****************************
-2024-06-19 20:21:19,073 :INFO : API_TEST :***********************API Test Start *****************************
-2024-06-19 20:21:19,073 :INFO : API_TEST :***********************API Request Made *****************************
-2024-06-19 20:21:19,680 :INFO : API_TEST :*********************** Response is not in JSON format *****************************
-2024-06-19 20:21:19,680 :INFO : API_TEST :<!DOCTYPE html>
+2024-06-21 11:26:03,279 :INFO : API_TEST :***********************API Test Start *****************************
+2024-06-21 11:26:03,281 :INFO : API_TEST :***********************API Request Made *****************************
+2024-06-21 11:26:05,874 :INFO : API_TEST :*********************** Response Received *****************************
+2024-06-21 11:26:05,874 :INFO : API_TEST :Success: Status code is 200 as expected.
+2024-06-21 11:26:05,874 :INFO : API_TEST :*********************** Status Code Asserted *****************************
+2024-06-21 11:26:05,874 :INFO : API_TEST :Success: All expected keys ['code', 'data'] found in response.
+2024-06-21 11:26:05,876 :INFO : API_TEST :***********************Response Keys Asserted*****************************
+2024-06-21 11:26:05,877 :INFO : API_TEST :Success: Response body matches expected response.
+2024-06-21 11:26:05,877 :INFO : API_TEST :***********************Response Body Asserted*****************************
+2024-06-21 11:26:05,877 :INFO : API_TEST :***********************API Test Ends*****************************
+2024-06-21 11:26:05,883 :INFO : API_TEST :***********************API Test Start *****************************
+2024-06-21 11:26:05,883 :INFO : API_TEST :***********************API Request Made *****************************
+2024-06-21 11:26:07,488 :INFO : API_TEST :*********************** Response is not in JSON format *****************************
+2024-06-21 11:26:07,488 :INFO : API_TEST :<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Error</title>
+</head>
+<body>
+<pre>Cannot POST /invalid/summary/get</pre>
+</body>
+</html>
+
+2024-06-21 11:26:07,488 :INFO : API_TEST :Success: Status code is 404 as expected.
+2024-06-21 11:26:07,489 :INFO : API_TEST :*********************** Status Code Asserted *****************************
+2024-06-21 11:26:07,489 :INFO : API_TEST :***********************API Test Ends*****************************
+2024-06-21 11:26:07,493 :INFO : API_TEST :***********************API Test Start *****************************
+2024-06-21 11:26:07,493 :INFO : API_TEST :***********************API Request Made *****************************
+2024-06-21 11:26:09,124 :INFO : API_TEST :*********************** Response is not in JSON format *****************************
+2024-06-21 11:26:09,126 :INFO : API_TEST :<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Error</title>
+</head>
+<body>
+<pre>Cannot POST /payment/invaliduuid123/payments/summary/get</pre>
+</body>
+</html>
+
+2024-06-21 11:26:09,127 :INFO : API_TEST :Success: Status code is 404 as expected.
+2024-06-21 11:26:09,129 :INFO : API_TEST :*********************** Status Code Asserted *****************************
+2024-06-21 11:26:09,129 :INFO : API_TEST :***********************API Test Ends*****************************
+2024-06-21 11:26:09,151 :INFO : API_TEST :***********************API Test Start *****************************
+2024-06-21 11:26:09,152 :INFO : API_TEST :***********************API Request Made *****************************
+2024-06-21 11:26:10,944 :INFO : API_TEST :*********************** Response Received *****************************
+2024-06-21 11:26:10,944 :INFO : API_TEST :Success: Status code is 200 as expected.
+2024-06-21 11:26:10,944 :INFO : API_TEST :*********************** Status Code Asserted *****************************
+2024-06-21 11:26:10,944 :INFO : API_TEST :Success: All expected keys ['message', 'code'] found in response.
+2024-06-21 11:26:10,944 :INFO : API_TEST :***********************Response Keys Asserted*****************************
+2024-06-21 11:26:10,945 :INFO : API_TEST :Success: Response body matches expected response.
+2024-06-21 11:26:10,945 :INFO : API_TEST :***********************Response Body Asserted*****************************
+2024-06-21 11:26:10,945 :INFO : API_TEST :***********************API Test Ends*****************************
+2024-06-21 11:26:10,947 :INFO : API_TEST :***********************API Test Start *****************************
+2024-06-21 11:26:10,947 :INFO : API_TEST :***********************API Request Made *****************************
+2024-06-21 11:26:12,773 :INFO : API_TEST :*********************** Response Received *****************************
+2024-06-21 11:26:12,773 :INFO : API_TEST :Success: Status code is 200 as expected.
+2024-06-21 11:26:12,773 :INFO : API_TEST :*********************** Status Code Asserted *****************************
+2024-06-21 11:26:12,773 :INFO : API_TEST :Success: All expected keys ['message', 'code'] found in response.
+2024-06-21 11:26:12,773 :INFO : API_TEST :***********************Response Keys Asserted*****************************
+2024-06-21 11:26:12,773 :INFO : API_TEST :Success: Response body matches expected response.
+2024-06-21 11:26:12,773 :INFO : API_TEST :***********************Response Body Asserted*****************************
+2024-06-21 11:26:12,773 :INFO : API_TEST :***********************API Test Ends*****************************
+2024-06-21 11:26:12,777 :INFO : API_TEST :***********************API Test Start *****************************
+2024-06-21 11:26:12,777 :INFO : API_TEST :***********************API Request Made *****************************
+2024-06-21 11:26:14,561 :INFO : API_TEST :*********************** Response Received *****************************
+2024-06-21 11:26:14,561 :INFO : API_TEST :Success: Status code is 200 as expected.
+2024-06-21 11:26:14,561 :INFO : API_TEST :*********************** Status Code Asserted *****************************
+2024-06-21 11:26:14,561 :INFO : API_TEST :Success: All expected keys ['code', 'data'] found in response.
+2024-06-21 11:26:14,562 :INFO : API_TEST :***********************Response Keys Asserted*****************************
+2024-06-21 11:26:14,562 :INFO : API_TEST :Success: Response body matches expected response.
+2024-06-21 11:26:14,562 :INFO : API_TEST :***********************Response Body Asserted*****************************
+2024-06-21 11:26:14,562 :INFO : API_TEST :***********************API Test Ends*****************************
+2024-06-21 11:26:14,564 :INFO : API_TEST :***********************API Test Start *****************************
+2024-06-21 11:26:14,565 :INFO : API_TEST :***********************API Request Made *****************************
+2024-06-21 11:26:16,380 :INFO : API_TEST :*********************** Response is not in JSON format *****************************
+2024-06-21 11:26:16,380 :INFO : API_TEST :<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Error</title>
+</head>
+<body>
+<pre>Cannot POST /invalid/payments/23432/get</pre>
+</body>
+</html>
+
+2024-06-21 11:26:16,380 :INFO : API_TEST :Success: Status code is 404 as expected.
+2024-06-21 11:26:16,380 :INFO : API_TEST :*********************** Status Code Asserted *****************************
+2024-06-21 11:26:16,380 :INFO : API_TEST :***********************API Test Ends*****************************
+2024-06-21 11:26:16,383 :INFO : API_TEST :***********************API Test Start *****************************
+2024-06-21 11:26:16,384 :INFO : API_TEST :***********************API Request Made *****************************
+2024-06-21 11:26:18,378 :INFO : API_TEST :*********************** Response Received *****************************
+2024-06-21 11:26:18,378 :INFO : API_TEST :Success: Status code is 200 as expected.
+2024-06-21 11:26:18,378 :INFO : API_TEST :*********************** Status Code Asserted *****************************
+2024-06-21 11:26:18,379 :INFO : API_TEST :Success: All expected keys ['message', 'code'] found in response.
+2024-06-21 11:26:18,379 :INFO : API_TEST :***********************Response Keys Asserted*****************************
+2024-06-21 11:26:18,379 :INFO : API_TEST :Success: Response body matches expected response.
+2024-06-21 11:26:18,380 :INFO : API_TEST :***********************Response Body Asserted*****************************
+2024-06-21 11:26:18,380 :INFO : API_TEST :***********************API Test Ends*****************************
+2024-06-21 11:26:18,384 :INFO : API_TEST :***********************API Test Start *****************************
+2024-06-21 11:26:18,384 :INFO : API_TEST :***********************API Request Made *****************************
+2024-06-21 11:26:20,232 :INFO : API_TEST :*********************** Response Received *****************************
+2024-06-21 11:26:20,232 :INFO : API_TEST :Success: Status code is 200 as expected.
+2024-06-21 11:26:20,232 :INFO : API_TEST :*********************** Status Code Asserted *****************************
+2024-06-21 11:26:20,232 :INFO : API_TEST :Success: All expected keys ['message', 'code'] found in response.
+2024-06-21 11:26:20,232 :INFO : API_TEST :***********************Response Keys Asserted*****************************
+2024-06-21 11:26:20,232 :INFO : API_TEST :Success: Response body matches expected response.
+2024-06-21 11:26:20,232 :INFO : API_TEST :***********************Response Body Asserted*****************************
+2024-06-21 11:26:20,232 :INFO : API_TEST :***********************API Test Ends*****************************
+2024-06-21 11:26:20,235 :INFO : API_TEST :***********************API Test Start *****************************
+2024-06-21 11:26:20,236 :INFO : API_TEST :***********************API Request Made *****************************
+2024-06-21 11:26:21,833 :INFO : API_TEST :*********************** Response is not in JSON format *****************************
+2024-06-21 11:26:21,833 :INFO : API_TEST :<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -93,13 +123,13 @@
 </body>
 </html>
 
-2024-06-19 20:21:19,680 :INFO : API_TEST :Success: Status code is 404 as expected.
-2024-06-19 20:21:19,680 :INFO : API_TEST :*********************** Status Code Asserted *****************************
-2024-06-19 20:21:19,681 :INFO : API_TEST :***********************API Test Ends*****************************
-2024-06-19 20:21:19,684 :INFO : API_TEST :***********************API Test Start *****************************
-2024-06-19 20:21:19,685 :INFO : API_TEST :***********************API Request Made *****************************
-2024-06-19 20:21:20,134 :INFO : API_TEST :*********************** Response is not in JSON format *****************************
-2024-06-19 20:21:20,135 :INFO : API_TEST :<!DOCTYPE html>
+2024-06-21 11:26:21,833 :INFO : API_TEST :Success: Status code is 404 as expected.
+2024-06-21 11:26:21,833 :INFO : API_TEST :*********************** Status Code Asserted *****************************
+2024-06-21 11:26:21,834 :INFO : API_TEST :***********************API Test Ends*****************************
+2024-06-21 11:26:21,839 :INFO : API_TEST :***********************API Test Start *****************************
+2024-06-21 11:26:21,839 :INFO : API_TEST :***********************API Request Made *****************************
+2024-06-21 11:26:23,509 :INFO : API_TEST :*********************** Response is not in JSON format *****************************
+2024-06-21 11:26:23,509 :INFO : API_TEST :<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -110,26 +140,175 @@
 </body>
 </html>
 
-2024-06-19 20:21:20,135 :INFO : API_TEST :Success: Status code is 404 as expected.
-2024-06-19 20:21:20,135 :INFO : API_TEST :*********************** Status Code Asserted *****************************
-2024-06-19 20:21:20,135 :INFO : API_TEST :***********************API Test Ends*****************************
-2024-06-19 20:21:20,139 :INFO : API_TEST :***********************API Test Start *****************************
-2024-06-19 20:21:20,140 :INFO : API_TEST :***********************API Request Made *****************************
-2024-06-19 20:21:20,824 :INFO : API_TEST :*********************** Response Received *****************************
-2024-06-19 20:21:20,824 :INFO : API_TEST :Success: Status code is 200 as expected.
-2024-06-19 20:21:20,824 :INFO : API_TEST :*********************** Status Code Asserted *****************************
-2024-06-19 20:21:20,824 :INFO : API_TEST :Success: All expected keys ['message', 'code'] found in response.
-2024-06-19 20:21:20,824 :INFO : API_TEST :***********************Response Keys Asserted*****************************
-2024-06-19 20:21:20,824 :INFO : API_TEST :Success: Response body matches expected response.
-2024-06-19 20:21:20,824 :INFO : API_TEST :***********************Response Body Asserted*****************************
-2024-06-19 20:21:20,824 :INFO : API_TEST :***********************API Test Ends*****************************
-2024-06-19 20:21:20,827 :INFO : API_TEST :***********************API Test Start *****************************
-2024-06-19 20:21:20,827 :INFO : API_TEST :***********************API Request Made *****************************
-2024-06-19 20:21:22,317 :INFO : API_TEST :*********************** Response Received *****************************
-2024-06-19 20:21:22,318 :INFO : API_TEST :Success: Status code is 200 as expected.
-2024-06-19 20:21:22,318 :INFO : API_TEST :*********************** Status Code Asserted *****************************
-2024-06-19 20:21:22,318 :INFO : API_TEST :Success: All expected keys ['message', 'code'] found in response.
-2024-06-19 20:21:22,318 :INFO : API_TEST :***********************Response Keys Asserted*****************************
-2024-06-19 20:21:22,318 :INFO : API_TEST :Success: Response body matches expected response.
-2024-06-19 20:21:22,318 :INFO : API_TEST :***********************Response Body Asserted*****************************
-2024-06-19 20:21:22,318 :INFO : API_TEST :***********************API Test Ends*****************************
+2024-06-21 11:26:23,510 :INFO : API_TEST :Success: Status code is 404 as expected.
+2024-06-21 11:26:23,510 :INFO : API_TEST :*********************** Status Code Asserted *****************************
+2024-06-21 11:26:23,510 :INFO : API_TEST :***********************API Test Ends*****************************
+2024-06-21 11:26:23,514 :INFO : API_TEST :***********************API Test Start *****************************
+2024-06-21 11:26:23,514 :INFO : API_TEST :***********************API Request Made *****************************
+2024-06-21 11:26:25,331 :INFO : API_TEST :*********************** Response Received *****************************
+2024-06-21 11:26:25,332 :INFO : API_TEST :Success: Status code is 200 as expected.
+2024-06-21 11:26:25,332 :INFO : API_TEST :*********************** Status Code Asserted *****************************
+2024-06-21 11:26:25,332 :INFO : API_TEST :Success: All expected keys ['message', 'code'] found in response.
+2024-06-21 11:26:25,332 :INFO : API_TEST :***********************Response Keys Asserted*****************************
+2024-06-21 11:26:25,332 :INFO : API_TEST :Success: Response body matches expected response.
+2024-06-21 11:26:25,332 :INFO : API_TEST :***********************Response Body Asserted*****************************
+2024-06-21 11:26:25,332 :INFO : API_TEST :***********************API Test Ends*****************************
+2024-06-21 11:26:25,336 :INFO : API_TEST :***********************API Test Start *****************************
+2024-06-21 11:26:25,336 :INFO : API_TEST :***********************API Request Made *****************************
+2024-06-21 11:26:27,874 :INFO : API_TEST :*********************** Response Received *****************************
+2024-06-21 11:26:27,874 :INFO : API_TEST :Success: Status code is 200 as expected.
+2024-06-21 11:26:27,874 :INFO : API_TEST :*********************** Status Code Asserted *****************************
+2024-06-21 11:26:27,874 :INFO : API_TEST :Success: All expected keys ['message', 'code'] found in response.
+2024-06-21 11:26:27,874 :INFO : API_TEST :***********************Response Keys Asserted*****************************
+2024-06-21 11:26:27,874 :INFO : API_TEST :Success: Response body matches expected response.
+2024-06-21 11:26:27,875 :INFO : API_TEST :***********************Response Body Asserted*****************************
+2024-06-21 11:26:27,875 :INFO : API_TEST :***********************API Test Ends*****************************
+2024-06-21 11:26:27,878 :INFO : API_TEST :***********************API Test Start *****************************
+2024-06-21 11:26:27,878 :INFO : API_TEST :***********************API Request Made *****************************
+2024-06-21 11:26:29,689 :INFO : API_TEST :*********************** Response Received *****************************
+2024-06-21 11:26:29,689 :INFO : API_TEST :Success: Status code is 200 as expected.
+2024-06-21 11:26:29,689 :INFO : API_TEST :*********************** Status Code Asserted *****************************
+2024-06-21 11:26:29,690 :INFO : API_TEST :Success: All expected keys ['message', 'code'] found in response.
+2024-06-21 11:26:29,690 :INFO : API_TEST :***********************Response Keys Asserted*****************************
+2024-06-21 11:26:29,690 :INFO : API_TEST :Success: Response body matches expected response.
+2024-06-21 11:26:29,690 :INFO : API_TEST :***********************Response Body Asserted*****************************
+2024-06-21 11:26:29,690 :INFO : API_TEST :***********************API Test Ends*****************************
+2024-06-21 11:26:29,693 :INFO : API_TEST :***********************API Test Start *****************************
+2024-06-21 11:26:29,693 :INFO : API_TEST :***********************API Request Made *****************************
+2024-06-21 11:26:31,327 :INFO : API_TEST :*********************** Response is not in JSON format *****************************
+2024-06-21 11:26:31,327 :INFO : API_TEST :<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Error</title>
+</head>
+<body>
+<pre>Cannot POST /invalid</pre>
+</body>
+</html>
+
+2024-06-21 11:26:31,327 :INFO : API_TEST :Success: Status code is 404 as expected.
+2024-06-21 11:26:31,327 :INFO : API_TEST :*********************** Status Code Asserted *****************************
+2024-06-21 11:26:31,327 :INFO : API_TEST :***********************API Test Ends*****************************
+2024-06-21 11:26:31,331 :INFO : API_TEST :***********************API Test Start *****************************
+2024-06-21 11:26:31,332 :INFO : API_TEST :***********************API Request Made *****************************
+2024-06-21 11:26:33,166 :INFO : API_TEST :*********************** Response Received *****************************
+2024-06-21 11:26:33,166 :INFO : API_TEST :Success: Status code is 200 as expected.
+2024-06-21 11:26:33,166 :INFO : API_TEST :*********************** Status Code Asserted *****************************
+2024-06-21 11:26:33,166 :INFO : API_TEST :Success: All expected keys ['message', 'code'] found in response.
+2024-06-21 11:26:33,166 :INFO : API_TEST :***********************Response Keys Asserted*****************************
+2024-06-21 11:26:33,166 :ERROR : API_TEST :Failure: Expected response body {'message': 'please enter valid merchant_mobile', 'code': 1000}, got {'code': 2000, 'message': 'payment add successfully'}
+2024-06-21 11:26:33,280 :INFO : API_TEST :***********************API Test Start *****************************
+2024-06-21 11:26:33,281 :INFO : API_TEST :***********************API Request Made *****************************
+2024-06-21 11:26:35,088 :INFO : API_TEST :*********************** Response Received *****************************
+2024-06-21 11:26:35,088 :INFO : API_TEST :Success: Status code is 200 as expected.
+2024-06-21 11:26:35,088 :INFO : API_TEST :*********************** Status Code Asserted *****************************
+2024-06-21 11:26:35,088 :INFO : API_TEST :Success: All expected keys ['message', 'code'] found in response.
+2024-06-21 11:26:35,088 :INFO : API_TEST :***********************Response Keys Asserted*****************************
+2024-06-21 11:26:35,089 :ERROR : API_TEST :Failure: Expected response body {'message': 'enter a valid datetime', 'code': 1000}, got {'code': 2000, 'message': 'payment add successfully'}
+2024-06-21 11:26:35,100 :INFO : API_TEST :***********************API Test Start *****************************
+2024-06-21 11:26:35,100 :INFO : API_TEST :***********************API Request Made *****************************
+2024-06-21 11:26:36,901 :INFO : API_TEST :*********************** Response Received *****************************
+2024-06-21 11:26:36,901 :INFO : API_TEST :Success: Status code is 200 as expected.
+2024-06-21 11:26:36,901 :INFO : API_TEST :*********************** Status Code Asserted *****************************
+2024-06-21 11:26:36,901 :INFO : API_TEST :Success: All expected keys ['message', 'code'] found in response.
+2024-06-21 11:26:36,902 :INFO : API_TEST :***********************Response Keys Asserted*****************************
+2024-06-21 11:26:36,902 :ERROR : API_TEST :Failure: Expected response body {'message': 'enter a vaild payee_vpa', 'code': 1000}, got {'code': 2000, 'message': 'payment add successfully'}
+2024-06-21 11:26:36,917 :INFO : API_TEST :***********************API Test Start *****************************
+2024-06-21 11:26:36,918 :INFO : API_TEST :***********************API Request Made *****************************
+2024-06-21 11:26:38,525 :INFO : API_TEST :*********************** Response Received *****************************
+2024-06-21 11:26:38,526 :INFO : API_TEST :Success: Status code is 200 as expected.
+2024-06-21 11:26:38,526 :INFO : API_TEST :*********************** Status Code Asserted *****************************
+2024-06-21 11:26:38,526 :INFO : API_TEST :Success: All expected keys ['message', 'code'] found in response.
+2024-06-21 11:26:38,526 :INFO : API_TEST :***********************Response Keys Asserted*****************************
+2024-06-21 11:26:38,527 :INFO : API_TEST :Success: Response body matches expected response.
+2024-06-21 11:26:38,527 :INFO : API_TEST :***********************Response Body Asserted*****************************
+2024-06-21 11:26:38,527 :INFO : API_TEST :***********************API Test Ends*****************************
+2024-06-21 11:26:38,533 :INFO : API_TEST :***********************API Test Start *****************************
+2024-06-21 11:26:38,533 :INFO : API_TEST :***********************API Request Made *****************************
+2024-06-21 11:26:40,165 :INFO : API_TEST :*********************** Response Received *****************************
+2024-06-21 11:26:40,165 :INFO : API_TEST :Success: Status code is 200 as expected.
+2024-06-21 11:26:40,165 :INFO : API_TEST :*********************** Status Code Asserted *****************************
+2024-06-21 11:26:40,165 :INFO : API_TEST :Success: All expected keys ['message', 'code'] found in response.
+2024-06-21 11:26:40,165 :INFO : API_TEST :***********************Response Keys Asserted*****************************
+2024-06-21 11:26:40,165 :INFO : API_TEST :Success: Response body matches expected response.
+2024-06-21 11:26:40,165 :INFO : API_TEST :***********************Response Body Asserted*****************************
+2024-06-21 11:26:40,165 :INFO : API_TEST :***********************API Test Ends*****************************
+2024-06-21 11:26:40,168 :INFO : API_TEST :***********************API Test Start *****************************
+2024-06-21 11:26:40,168 :INFO : API_TEST :***********************API Request Made *****************************
+2024-06-21 11:26:41,820 :INFO : API_TEST :*********************** Response Received *****************************
+2024-06-21 11:26:41,820 :INFO : API_TEST :Success: Status code is 200 as expected.
+2024-06-21 11:26:41,820 :INFO : API_TEST :*********************** Status Code Asserted *****************************
+2024-06-21 11:26:41,820 :INFO : API_TEST :Success: All expected keys ['message', 'code'] found in response.
+2024-06-21 11:26:41,821 :INFO : API_TEST :***********************Response Keys Asserted*****************************
+2024-06-21 11:26:41,821 :INFO : API_TEST :Success: Response body matches expected response.
+2024-06-21 11:26:41,821 :INFO : API_TEST :***********************Response Body Asserted*****************************
+2024-06-21 11:26:41,821 :INFO : API_TEST :***********************API Test Ends*****************************
+2024-06-21 11:26:41,825 :INFO : API_TEST :***********************API Test Start *****************************
+2024-06-21 11:26:41,826 :INFO : API_TEST :***********************API Request Made *****************************
+2024-06-21 11:26:43,395 :INFO : API_TEST :*********************** Response Received *****************************
+2024-06-21 11:26:43,395 :INFO : API_TEST :Success: Status code is 200 as expected.
+2024-06-21 11:26:43,395 :INFO : API_TEST :*********************** Status Code Asserted *****************************
+2024-06-21 11:26:43,396 :INFO : API_TEST :Success: All expected keys ['message', 'code'] found in response.
+2024-06-21 11:26:43,396 :INFO : API_TEST :***********************Response Keys Asserted*****************************
+2024-06-21 11:26:43,396 :INFO : API_TEST :Success: Response body matches expected response.
+2024-06-21 11:26:43,396 :INFO : API_TEST :***********************Response Body Asserted*****************************
+2024-06-21 11:26:43,396 :INFO : API_TEST :***********************API Test Ends*****************************
+2024-06-21 11:26:43,399 :INFO : API_TEST :***********************API Test Start *****************************
+2024-06-21 11:26:43,400 :INFO : API_TEST :***********************API Request Made *****************************
+2024-06-21 11:26:44,986 :INFO : API_TEST :*********************** Response Received *****************************
+2024-06-21 11:26:44,987 :INFO : API_TEST :Success: Status code is 200 as expected.
+2024-06-21 11:26:44,987 :INFO : API_TEST :*********************** Status Code Asserted *****************************
+2024-06-21 11:26:44,987 :INFO : API_TEST :Success: All expected keys ['message', 'code'] found in response.
+2024-06-21 11:26:44,987 :INFO : API_TEST :***********************Response Keys Asserted*****************************
+2024-06-21 11:26:44,987 :INFO : API_TEST :Success: Response body matches expected response.
+2024-06-21 11:26:44,987 :INFO : API_TEST :***********************Response Body Asserted*****************************
+2024-06-21 11:26:44,987 :INFO : API_TEST :***********************API Test Ends*****************************
+2024-06-21 11:26:44,993 :INFO : API_TEST :***********************API Test Start *****************************
+2024-06-21 11:26:44,993 :INFO : API_TEST :***********************API Request Made *****************************
+2024-06-21 11:26:46,579 :INFO : API_TEST :*********************** Response Received *****************************
+2024-06-21 11:26:46,581 :INFO : API_TEST :Success: Status code is 200 as expected.
+2024-06-21 11:26:46,581 :INFO : API_TEST :*********************** Status Code Asserted *****************************
+2024-06-21 11:26:46,581 :INFO : API_TEST :Success: All expected keys ['message', 'code'] found in response.
+2024-06-21 11:26:46,581 :INFO : API_TEST :***********************Response Keys Asserted*****************************
+2024-06-21 11:26:46,581 :INFO : API_TEST :Success: Response body matches expected response.
+2024-06-21 11:26:46,581 :INFO : API_TEST :***********************Response Body Asserted*****************************
+2024-06-21 11:26:46,581 :INFO : API_TEST :***********************API Test Ends*****************************
+2024-06-21 11:26:46,583 :INFO : API_TEST :***********************API Test Start *****************************
+2024-06-21 11:26:46,584 :INFO : API_TEST :***********************API Request Made *****************************
+2024-06-21 11:26:48,183 :INFO : API_TEST :*********************** Response Received *****************************
+2024-06-21 11:26:48,183 :INFO : API_TEST :Success: Status code is 200 as expected.
+2024-06-21 11:26:48,183 :INFO : API_TEST :*********************** Status Code Asserted *****************************
+2024-06-21 11:26:48,183 :INFO : API_TEST :Success: All expected keys ['message', 'code'] found in response.
+2024-06-21 11:26:48,184 :INFO : API_TEST :***********************Response Keys Asserted*****************************
+2024-06-21 11:26:48,184 :INFO : API_TEST :Success: Response body matches expected response.
+2024-06-21 11:26:48,184 :INFO : API_TEST :***********************Response Body Asserted*****************************
+2024-06-21 11:26:48,184 :INFO : API_TEST :***********************API Test Ends*****************************
+2024-06-21 11:26:48,186 :INFO : API_TEST :***********************API Test Start *****************************
+2024-06-21 11:26:48,187 :INFO : API_TEST :***********************API Request Made *****************************
+2024-06-21 11:26:50,779 :INFO : API_TEST :*********************** Response Received *****************************
+2024-06-21 11:26:50,779 :INFO : API_TEST :Success: Status code is 200 as expected.
+2024-06-21 11:26:50,779 :INFO : API_TEST :*********************** Status Code Asserted *****************************
+2024-06-21 11:26:50,779 :INFO : API_TEST :Success: All expected keys ['message', 'code'] found in response.
+2024-06-21 11:26:50,779 :INFO : API_TEST :***********************Response Keys Asserted*****************************
+2024-06-21 11:26:50,779 :ERROR : API_TEST :Failure: Expected response body {'code': 1000, 'message': ['Invalid Amount']}, got {'code': 2000, 'message': 'payment add successfully'}
+2024-06-21 11:26:50,791 :INFO : API_TEST :***********************API Test Start *****************************
+2024-06-21 11:26:50,791 :INFO : API_TEST :***********************API Request Made *****************************
+2024-06-21 11:26:52,348 :INFO : API_TEST :*********************** Response Received *****************************
+2024-06-21 11:26:52,349 :INFO : API_TEST :Success: Status code is 200 as expected.
+2024-06-21 11:26:52,349 :INFO : API_TEST :*********************** Status Code Asserted *****************************
+2024-06-21 11:26:52,350 :INFO : API_TEST :Success: All expected keys ['message', 'code'] found in response.
+2024-06-21 11:26:52,350 :INFO : API_TEST :***********************Response Keys Asserted*****************************
+2024-06-21 11:26:52,351 :INFO : API_TEST :Success: Response body matches expected response.
+2024-06-21 11:26:52,351 :INFO : API_TEST :***********************Response Body Asserted*****************************
+2024-06-21 11:26:52,351 :INFO : API_TEST :***********************API Test Ends*****************************
+2024-06-21 11:26:52,361 :INFO : API_TEST :***********************API Test Start *****************************
+2024-06-21 11:26:52,362 :INFO : API_TEST :***********************API Request Made *****************************
+2024-06-21 11:26:53,976 :INFO : API_TEST :*********************** Response Received *****************************
+2024-06-21 11:26:53,976 :INFO : API_TEST :Success: Status code is 200 as expected.
+2024-06-21 11:26:53,976 :INFO : API_TEST :*********************** Status Code Asserted *****************************
+2024-06-21 11:26:53,976 :INFO : API_TEST :Success: All expected keys ['message', 'code'] found in response.
+2024-06-21 11:26:53,977 :INFO : API_TEST :***********************Response Keys Asserted*****************************
+2024-06-21 11:26:53,977 :INFO : API_TEST :Success: Response body matches expected response.
+2024-06-21 11:26:53,977 :INFO : API_TEST :***********************Response Body Asserted*****************************
+2024-06-21 11:26:53,977 :INFO : API_TEST :***********************API Test Ends*****************************

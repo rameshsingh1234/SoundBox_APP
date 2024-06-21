@@ -1,5 +1,5 @@
 Testcase ID,Testcase Type,url,method,headers,payload,expected_status_code,expected_response_keys,expected_responce_body
-TC_Soundbox_API_06,Positive,http://k8s-paymentm-paymenti-a2c50e0ce0-1109762679.us-east-1.elb.amazonaws.com/payments/23432/summary/get,POST,"{""Content-Type"":""application/json""}","{
+TC_Soundbox_API_06,Positive,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments/23432/summary/get,POST,"{""Content-Type"":""application/json""}","{
   ""date"": ""2024-06-13""
 }",200,"code,data","{
     ""code"": 2000,
@@ -9,7 +9,7 @@ TC_Soundbox_API_06,Positive,http://k8s-paymentm-paymenti-a2c50e0ce0-1109762679.u
         ""current_date"": ""2024-06-13""
     }
 }"
-TC_Soundbox_API_06-A,negative,http://k8s-paymentm-paymenti-a2c50e0ce0-1109762679.us-east-1.elb.amazonaws.com/invalid/summary/get,POST,"{""Content-Type"":""application/json""}","{
+TC_Soundbox_API_06-A,negative,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/invalid/summary/get,POST,"{""Content-Type"":""application/json""}","{
   ""date"": ""2024-06-13""
 }",404,"message,errors","{
     ""message"": ""not found"",
@@ -19,7 +19,7 @@ TC_Soundbox_API_06-A,negative,http://k8s-paymentm-paymenti-a2c50e0ce0-1109762679
         }
     ]
 }"
-TC_Soundbox_API_06-B,negative,http://k8s-paymentm-paymenti-a2c50e0ce0-1109762679.us-east-1.elb.amazonaws.com/payment/invaliduuid123/payments/summary/get,POST,"{""Content-Type"":""application/json""}","{
+TC_Soundbox_API_06-B,negative,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payment/invaliduuid123/payments/summary/get,POST,"{""Content-Type"":""application/json""}","{
   ""date"": ""2024-06-13""
 }",404,"message,errors","{
     ""message"": ""not found"",
@@ -30,17 +30,17 @@ TC_Soundbox_API_06-B,negative,http://k8s-paymentm-paymenti-a2c50e0ce0-1109762679
         }
     ]
 }"
-TC_Soundbox_API_06-C,Positive,http://k8s-paymentm-paymenti-a2c50e0ce0-1109762679.us-east-1.elb.amazonaws.com/payments/23432/summary/get,POST,"{""Content-Type"":""application/json""}",{},200,"message,code","{
+TC_Soundbox_API_06-C,Positive,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments/23432/summary/get,POST,"{""Content-Type"":""application/json""}",{},200,"message,code","{
     ""code"": 1000,
     ""message"": ""no record found""
 }"
-TC_Soundbox_API_06-D,negative,http://k8s-paymentm-paymenti-a2c50e0ce0-1109762679.us-east-1.elb.amazonaws.com/payments/erefhj/summary/get,POST,"{""Content-Type"":""application/json""}","{
+TC_Soundbox_API_06-D,negative,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments/erefhj/summary/get,POST,"{""Content-Type"":""application/json""}","{
   ""date"": ""2024-06-13""
 }",200,"message,code","{
     ""code"": 1000,
     ""message"": ""no record found""
 }"
-TC_Soundbox_API_07,Positive,http://k8s-paymentm-paymenti-a2c50e0ce0-1109762679.us-east-1.elb.amazonaws.com/payments/23432/get,POST,"{""Content-Type"":""application/json""}","{
+TC_Soundbox_API_07,Positive,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments/23432/get,POST,"{""Content-Type"":""application/json""}","{
   ""date"": ""2024-06-13""
 }",200,"code,data","{
     ""code"": 2000,
@@ -259,7 +259,7 @@ TC_Soundbox_API_07,Positive,http://k8s-paymentm-paymenti-a2c50e0ce0-1109762679.u
         ]
     }
 }"
-TC_Soundbox_API_07-A,negative,http://k8s-paymentm-paymenti-a2c50e0ce0-1109762679.us-east-1.elb.amazonaws.com/invalid/payments/23432/get,POST,"{""Content-Type"":""application/json""}","{
+TC_Soundbox_API_07-A,negative,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/invalid/payments/23432/get,POST,"{""Content-Type"":""application/json""}","{
   ""date"": ""2024-06-13""
 }",404,"message,errors","{
     ""message"": ""not found"",
@@ -270,24 +270,24 @@ TC_Soundbox_API_07-A,negative,http://k8s-paymentm-paymenti-a2c50e0ce0-1109762679
         }
     ]
 }"
-TC_Soundbox_API_07-B,negative,http://k8s-paymentm-paymenti-a2c50e0ce0-1109762679.us-east-1.elb.amazonaws.com/payments/invalid54/get,POST,"{""Content-Type"":""application/json""}","{
+TC_Soundbox_API_07-B,negative,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments/invalid54/get,POST,"{""Content-Type"":""application/json""}","{
   ""date"": ""2024-06-13""
 }",200,"message,code","{
     ""code"": 1000,
     ""message"": ""No records""
 }"
-TC_Soundbox_API_07-C,negative,http://k8s-paymentm-paymenti-a2c50e0ce0-1109762679.us-east-1.elb.amazonaws.com/payments/54/get,POST,"{""Content-Type"":""application/json""}"," {
+TC_Soundbox_API_07-C,negative,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments/54/get,POST,"{""Content-Type"":""application/json""}"," {
 } ",200,"message,code","{
     ""code"": 1000,
     ""message"": ""No records""
 }"
-TC_Soundbox_API_07-D,negative,http://k8s-paymentm-paymenti-a2c50e0ce0-1109762679.us-east-1.elb.amazonaws.com/payments/get,POST,"{""Content-Type"":""application/json""}"," {
+TC_Soundbox_API_07-D,negative,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments/get,POST,"{""Content-Type"":""application/json""}"," {
 ""date"": ""2022/03/12""
 } ",404,"message,code","{
     ""code"": 1000,
     ""message"": ""No records""
 }"
-TC_Soundbox_API_07-E,negative,http://k8s-paymentm-paymenti-a2c50e0ce0-1109762679.us-east-1.elb.amazonaws.com/payments/get,POST,"{""Content-Type"":""application/json""}"," { 
+TC_Soundbox_API_07-E,negative,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments/get,POST,"{""Content-Type"":""application/json""}"," { 
 ""date"": ""10/12/2020"" 
 } ",404,"message,errors","{
     ""message"": ""not found"",
@@ -297,15 +297,164 @@ TC_Soundbox_API_07-E,negative,http://k8s-paymentm-paymenti-a2c50e0ce0-1109762679
         }
     ]
 }"
-TC_Soundbox_API_07-F,negative,http://k8s-paymentm-paymenti-a2c50e0ce0-1109762679.us-east-1.elb.amazonaws.com/payments/23432/get,POST,"{""Content-Type"":""application/json""}"," {
+TC_Soundbox_API_07-F,negative,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments/23432/get,POST,"{""Content-Type"":""application/json""}"," {
 ""date"": ""2024/0613""
 } ",200,"message,code","{
     ""code"": 1000,
     ""message"": ""invalid input syntax for type date: \""2024/0613\""""
 }"
-TC_Soundbox_API_07-G,negative,http://k8s-paymentm-paymenti-a2c50e0ce0-1109762679.us-east-1.elb.amazonaws.com/payments/23432/get,POST,"{""Content-Type"":""application/json""}"," {
+TC_Soundbox_API_07-G,negative,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments/23432/get,POST,"{""Content-Type"":""application/json""}"," {
 ""data"":""""
 } ",200,"message,code","{
     ""code"": 1000,
     ""message"": ""No records""
+}"
+TC_Soundbox_API_08,Positive,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments,POST,"{""Content-Type"":""application/json""}","{
+  ""merchant_mobile"": ""9082023284"",
+  ""payee_vpa"": ""34892edjkncx"",
+  ""datetime"": ""12/10/2020"",
+  ""amount"": 3848492,
+  ""payer_vpa"": ""6437890"",
+  ""payer_name"": ""abc""
+}",200,"message,code","{
+    ""code"": 2000,
+    ""message"": ""payment add successfully""
+}"
+TC_Soundbox_API_08-A,negative,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/invalid,POST,"{""Content-Type"":""application/json""}","{
+  ""merchant_mobile"": ""9082023284"",
+  ""payee_vpa"": ""34892edjkncx"",
+  ""datetime"": ""12/10/2020"",
+  ""amount"": 3848492,
+  ""payer_vpa"": ""6437890"",
+  ""payer_name"": ""abc""
+}",404,,
+TC_Soundbox_API_08-B,negative,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments,POST,"{""Content-Type"":""application/json""}","{
+  ""merchant_mobile"": ""0123456789"",
+  ""payee_vpa"": ""34892edjkncx"",
+  ""datetime"": ""12/10/2020"",
+  ""amount"": 3848492,
+  ""payer_vpa"": ""6437890"",
+  ""payer_name"": ""abc""
+}",200,"message,code","{
+    ""message"": ""please enter valid merchant_mobile"",
+    ""code"": 1000
+}"
+TC_Soundbox_API_08-C,negative,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments,POST,"{""Content-Type"":""application/json""}","{
+  ""merchant_mobile"": ""9082023284"",
+  ""payee_vpa"": ""34892edjkncx"",
+  ""datetime"": ""12/2020/10"",
+  ""amount"": 3848492,
+  ""payer_vpa"": ""6437890"",
+  ""payer_name"": ""abc""
+}",200,"message,code","{
+    ""message"": ""enter a valid datetime"",
+    ""code"": 1000
+}"
+TC_Soundbox_API_08-D,negative,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments,POST,"{""Content-Type"":""application/json""}","{
+  ""merchant_mobile"": ""0123456789"",
+  ""payee_vpa"": ""34892invalid"",
+  ""datetime"": ""12/10/2020"",
+  ""amount"": 3848492,
+  ""payer_vpa"": ""6437890"",
+  ""payer_name"": ""abc""
+}",200,"message,code","{
+    ""message"": ""enter a vaild payee_vpa"",
+    ""code"": 1000
+}"
+TC_Soundbox_API_08-E,negative,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments,POST,"{""Content-Type"":""application/json""}","{
+  ""merchant_mobile"": ""9082023284"",
+  ""payee_vpa"": ""34892edjkncx"",
+  ""datetime"": ""12/10/2020"",
+  ""amount"": 3848492,
+  ""payer_vpa"": ""6437890""
+}",200,"message,code","{
+    ""code"": 1000,
+    ""message"": [
+        ""Payer Name is required""
+    ]
+}"
+TC_Soundbox_API_08-F,negative,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments,POST,"{""Content-Type"":""application/json""}","{
+  ""merchant_mobile"": ""9082023284"",
+  ""payee_vpa"": ""34892edjkncx"",
+  ""datetime"": ""12/10/2020"",
+  ""amount"": 3848492,
+  ""payer_name"": ""abc""
+}",200,"message,code","{
+    ""code"": 1000,
+    ""message"": [
+        ""Payer vpa is required""
+    ]
+}"
+TC_Soundbox_API_08-G,negative,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments,POST,"{""Content-Type"":""application/json""}","{
+  ""merchant_mobile"": ""9082023284"",
+  ""payee_vpa"": ""34892edjkncx"",
+  ""amount"": 3848492,
+  ""payer_vpa"": ""6437890"",
+  ""payer_name"": ""abc""
+}",200,"message,code","{
+    ""code"": 1000,
+    ""message"": [
+        ""Datetime is required""
+    ]
+}"
+TC_Soundbox_API_08-H,negative,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments,POST,"{""Content-Type"":""application/json""}","{
+  ""merchant_mobile"": """",
+  ""payee_vpa"": ""34892edjkncx"",
+  ""datetime"": ""12/10/2020"",
+  ""amount"": 3848492,
+  ""payer_vpa"": ""6437890"",
+  ""payer_name"": ""abc""
+}",200,"message,code","{
+    ""code"": 1000,
+    ""message"": [
+        ""Mobile Number cannot be empty""
+    ]
+}"
+TC_Soundbox_API_08-I,negative,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments,POST,"{""Content-Type"":""application/json""}","{ 
+""merchant_mobile"": 9082023284, ""payee_vpa"": ""34892edjkncx"", ""datetime"": ""12/10/2020"", ""amount"": 3848492, ""payer_vpa"": ""6437890"", ""payer_name"": ""abc""
+ }",200,"message,code","{
+    ""code"": 1000,
+    ""message"": [
+        ""Invalid Mobile Number""
+    ]
+}"
+TC_Soundbox_API_08-J,negative,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments,POST,"{""Content-Type"":""application/json""}","{
+ ""merchant_mobile"": ""9082023284"", ""payee_vpa"": 34892, ""datetime"": ""12/10/2020"", ""amount"": 3848492, ""payer_vpa"": ""6437890"", ""payer_name"": ""abc"" 
+}",200,"message,code","{
+    ""code"": 1000,
+    ""message"": [
+        ""Invalid Payee vpa""
+    ]
+}"
+TC_Soundbox_API_08-K,negative,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments,POST,"{""Content-Type"":""application/json""}","{ 
+""merchant_mobile"": ""9082023284"", ""payee_vpa"": ""34892edjkncx"", ""datetime"": 12102020, ""amount"": 3848492, ""payer_vpa"": ""6437890"", ""payer_name"": ""abc""
+ }",200,"message,code","{
+    ""code"": 1000,
+    ""message"": [
+        ""Invalid Datetime""
+    ]
+}"
+TC_Soundbox_API_08-L,negative,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments,POST,"{""Content-Type"":""application/json""}","{ 
+""merchant_mobile"": ""9082023284"", ""payee_vpa"": ""34892edjkncx"", ""datetime"": ""12/10/2020"", ""amount"": ""3848492"", ""payer_vpa"": ""6437890"", ""payer_name"": ""abc""
+ }",200,"message,code","{
+    ""code"": 1000,
+    ""message"": [
+        ""Invalid Amount""
+    ]
+}"
+TC_Soundbox_API_08-M,negative,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments,POST,"{""Content-Type"":""application/json""}","{ 
+""merchant_mobile"": ""9082023284"", ""payee_vpa"": ""34892edjkncx"", ""datetime"": ""12/10/2020"", ""amount"": 3848492, ""payer_vpa"": 6437890, ""payer_name"": ""abc""
+ }",200,"message,code","{
+    ""code"": 1000,
+    ""message"": [
+        ""Invalid Payer vpa""
+    ]
+}"
+TC_Soundbox_API_08-N,negative,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments,POST,"{""Content-Type"":""application/json""}","{ 
+""merchant_mobile"": ""9082023284"", ""payee_vpa"": ""34892edjkncx"", ""datetime"": ""12/10/2020"", ""amount"": 3848492, ""payer_vpa"": ""6437890"", ""payer_name"": 123 
+}",200,"message,code","{
+    ""code"": 1000,
+    ""message"": [
+        ""Invalid Payer Name""
+    ]
 }"
