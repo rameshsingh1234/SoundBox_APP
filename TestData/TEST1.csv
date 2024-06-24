@@ -310,8 +310,12 @@ TC_Soundbox_API_07-G,negative,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws
     ""message"": ""No records""
 }"
 TC_Soundbox_API_08,Positive,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments,POST,"{""Content-Type"":""application/json""}","{
-    ""code"": 2000,
-    ""message"": ""payment add successfully""
+  ""merchant_mobile"": ""9082023284"",
+  ""payee_vpa"": ""34892edjkncx"",
+  ""datetime"": ""12/10/2020"",
+  ""amount"": 3848492,
+  ""payer_vpa"": ""6437890"",
+  ""payer_name"": ""abc""
 }",200,"message,code","{
     ""code"": 2000,
     ""message"": ""payment add successfully""
