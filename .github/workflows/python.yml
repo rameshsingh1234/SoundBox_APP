@@ -14,24 +14,6 @@ jobs:
         uses: actions/checkout@v2
         with:
           ref: master
-      - name: Create Issue if Failures Found
-        if: steps.zap_scan.outputs.alerts_present == 'true'
-        uses: actions/github-script@v5
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          script: |
-            const { context, github } = require('@actions/github');
-
-            const repo = context.repo;
-            const issueTitle = "ZAP Scan Findings";
-            const issueBody = "ZAP scan detected vulnerabilities.";
-
-            github.issues.create({
-              ...repo,
-              title: issueTitle,
-              body: issueBody
-            });
-
       - name: ZAP Scan
         uses: zaproxy/action-api-scan@v0.7.0
         with:
