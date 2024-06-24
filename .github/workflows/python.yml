@@ -1,67 +1,70 @@
 name: Test_app.py
+
 on:
   push:
     branches:
-        - master
-  jobs:
-    test-and-scan:
-      runs-on: ubuntu-latest
+      - master
 
-      services:
-        zap:
-          image: owasp/zap2docker-stable
-          options: --entrypoint=""
-          ports:
-            - 8080:8080
+jobs:
+  test-and-scan:
+    runs-on: ubuntu-latest
 
-      steps:
-        - name: Checkout repository
-          uses: actions/checkout@v2
+    services:
+      zap:
+        image: owasp/zap2docker-stable
+        options: --entrypoint=""
+        ports:
+          - 8080:8080
 
-        - name: Set up Python
-          uses: actions/setup-python@v2
-          with:
-            python-version: '3.8'
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-        - name: Install dependencies
-          run: |
-            python -m pip install --upgrade pip
-            pip install -r requirements.txt
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
 
-        - name: Run API tests
-          env:
-            ZAP_URL: http://localhost:8080
-          run: |
-            pytest --maxfail=1 --disable-warnings -v
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
-        - name: Start ZAP daemon
-          run: |
-            docker run -d -u zap \
-              --name zap \
-              -p 8080:8080 \
-              -i owasp/zap2docker-stable zap.sh -daemon -host 0.0.0.0 -port 8080 -config api.disablekey=true
-            sleep 15
+      - name: Start ZAP daemon
+        run: |
+          docker run -d -u zap \
+            --name zap \
+            -p 8080:8080 \
+            -i owasp/zap2docker-stable zap.sh -daemon -host 0.0.0.0 -port 8080 -config api.disablekey=true
+          sleep 15
 
-        - name: Open URL and spider
-          run: |
-            docker exec zap zap-cli --zap-url http://localhost --zap-port 8080 open-url "https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments/23432/summary/get"
-            docker exec zap zap-cli --zap-url http://localhost --zap-port 8080 spider "https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments/23432/summary/get"
+      - name: Open URL and spider
+        run: |
+          docker exec zap zap-cli --zap-url http://localhost --zap-port 8080 open-url "https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments/23432/summary/get"
+          docker exec zap zap-cli --zap-url http://localhost --zap-port 8080 spider "https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments/23432/summary/get"
 
-        - name: Run active scan
-          run: |
-            docker exec zap zap-cli --zap-url http://localhost --zap-port 8080 active-scan "https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments/23432/summary/get"
-            docker exec zap zap-cli --zap-url http://localhost --zap-port 8080 alerts
+      - name: Run active scan
+        run: |
+          docker exec zap zap-cli --zap-url http://localhost --zap-port 8080 active-scan "https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments/23432/summary/get"
+          docker exec zap zap-cli --zap-url http://localhost --zap-port 8080 alerts
 
-        - name: Generate ZAP report
-          run: |
-            docker exec zap zap-cli --zap-url http://localhost --zap-port 8080 report -o /zap/wrk/zap_report.html -f html
-            docker cp zap:/zap/wrk/zap_report.html zap_report.html
+      - name: Generate ZAP report
+        run: |
+          docker exec zap zap-cli --zap-url http://localhost --zap-port 8080 report -o /zap/wrk/zap_report.html -f html
+          docker cp zap:/zap/wrk/zap_report.html zap_report.html
 
-        - name: Upload ZAP report
-          uses: actions/upload-artifact@v2
-          with:
-            name: zap-report
-            path: zap_report.html
+      - name: Upload ZAP report
+        uses: actions/upload-artifact@v2
+        with:
+          name: zap-report
+          path: zap_report.html
+
+      - name: Run API tests
+        env:
+          ZAP_URL: http://localhost:8080
+        run: |
+          pytest --maxfail=1 --disable-warnings -v
+
 #jobs:
 #  build:
 #    runs-on: ubuntu-latest
