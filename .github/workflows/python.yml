@@ -14,15 +14,6 @@ jobs:
         with:
           ref: master
 
-      - name: ZAP Scan
-        uses: zaproxy/action-api-scan@v0.7.0
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          docker_name: 'ghcr.io/zaproxy/zaproxy:stable'
-          format: openapi
-          target: 'https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com'
-          cmd_options: '-J report_json.json -w report_md.md -r report_html.html -a'
-
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
@@ -43,15 +34,27 @@ jobs:
 
       - name: Run Pytest
        # run: pytest -v -s --capture=tee-sys ./TestScript/Test_app.py --html=./reports/report.html
-        run: pytest ./TestScript/Test_app.py --html-report=./reports/report.html
+        run: pytest ./TestScript/Test_app.py --html-report=./reports/Pytest_report.html
 
-      - name: Attach the Test Report
+
+      - name: ZAP Scan
+        uses: zaproxy/action-api-scan@v0.7.0
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          docker_name: 'ghcr.io/zaproxy/zaproxy:stable'
+          format: openapi
+          target: 'https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com'
+          cmd_options: '-J report_json.json -w report_md.md -r report_html.html -a'
+
+
+
+      - name: Attach the Test Report To gmail
         uses: actions/upload-artifact@v2
         with:
           name: Test Report
-          path: reports/report.html
+          path: reports/Pytest_report.html
 
-      - name: Attach the Zap Report
+      - name: Attach the Zap Report To Gmail
         uses: actions/upload-artifact@v2
         with:
           name: Test Report
@@ -65,6 +68,25 @@ jobs:
           RECIPIENT_EMAIL: ${{secrets.RECIPIENT_EMAIL}}  # Replace with the recipient's email
         run: |
           python Utilities/send_email_script.py $GMAIL_USERNAME $GMAIL_PASSWORD $RECIPIENT_EMAIL
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
