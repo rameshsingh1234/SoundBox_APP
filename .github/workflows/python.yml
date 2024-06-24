@@ -36,12 +36,6 @@ jobs:
           name: zap-report-html
           path: report_html.html
 
-#      - name: Create Issue if Failures Found
-#        if: ${{ steps.zap_scan.outputs.alerts_present == 'true' }}
-#        run: |
-#          echo "ZAP scan detected issues. Creating issue..."
-#          # Add your script or command to create an issue in your repository management system (e.g., GitHub Issues).
-
       - name: Configure Gmail and Send Email
         env:
           GMAIL_USERNAME: ${{ secrets.GMAIL_USERNAME }}
@@ -57,8 +51,8 @@ jobs:
 
 
 
-
-
+#
+#
 #name: Test and Scan
 #
 #on:
@@ -101,7 +95,7 @@ jobs:
 #
 #
 ##test
-
+#
 #    - name: Send Email Report
 #      uses: actions/upload-artifact@v2
 #      with:
@@ -119,4 +113,4 @@ jobs:
 #
 #      run: |
 #        python Utilities/send_email_script.py $GMAIL_USERNAME $GMAIL_PASSWORD $RECIPIENT_EMAIL
-
+#
