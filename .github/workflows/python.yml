@@ -60,11 +60,11 @@ jobs:
           name: Test Report
           path: report_html.html
 
-      -name: test directory
-              run : pwd
+      - name: test directory
+        run : pwd
 
-            - name : test
-              run : ls
+      - name : test
+        run : ls
 
       - name: Attach the Test Logs To Gmail
         uses: actions/upload-artifact@v2
