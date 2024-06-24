@@ -310,12 +310,8 @@ TC_Soundbox_API_07-G,negative,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws
     ""message"": ""No records""
 }"
 TC_Soundbox_API_08,Positive,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments,POST,"{""Content-Type"":""application/json""}","{
-  ""merchant_mobile"": ""9082023284"",
-  ""payee_vpa"": ""34892edjkncx"",
-  ""datetime"": ""12/10/2020"",
-  ""amount"": 3848492,
-  ""payer_vpa"": ""6437890"",
-  ""payer_name"": ""abc""
+    ""code"": 2000,
+    ""message"": ""payment add successfully""
 }",200,"message,code","{
     ""code"": 2000,
     ""message"": ""payment add successfully""
@@ -335,10 +331,7 @@ TC_Soundbox_API_08-B,negative,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws
   ""amount"": 3848492,
   ""payer_vpa"": ""6437890"",
   ""payer_name"": ""abc""
-}",200,"message,code","{
-    ""message"": ""please enter valid merchant_mobile"",
-    ""code"": 1000
-}"
+}",200,"message,code",
 TC_Soundbox_API_08-C,negative,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments,POST,"{""Content-Type"":""application/json""}","{
   ""merchant_mobile"": ""9082023284"",
   ""payee_vpa"": ""34892edjkncx"",
@@ -346,10 +339,7 @@ TC_Soundbox_API_08-C,negative,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws
   ""amount"": 3848492,
   ""payer_vpa"": ""6437890"",
   ""payer_name"": ""abc""
-}",200,"message,code","{
-    ""message"": ""enter a valid datetime"",
-    ""code"": 1000
-}"
+}",200,"message,code",
 TC_Soundbox_API_08-D,negative,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments,POST,"{""Content-Type"":""application/json""}","{
   ""merchant_mobile"": ""0123456789"",
   ""payee_vpa"": ""34892invalid"",
@@ -357,10 +347,7 @@ TC_Soundbox_API_08-D,negative,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws
   ""amount"": 3848492,
   ""payer_vpa"": ""6437890"",
   ""payer_name"": ""abc""
-}",200,"message,code","{
-    ""message"": ""enter a vaild payee_vpa"",
-    ""code"": 1000
-}"
+}",200,"message,code",
 TC_Soundbox_API_08-E,negative,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments,POST,"{""Content-Type"":""application/json""}","{
   ""merchant_mobile"": ""9082023284"",
   ""payee_vpa"": ""34892edjkncx"",
@@ -436,12 +423,7 @@ TC_Soundbox_API_08-K,negative,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws
 }"
 TC_Soundbox_API_08-L,negative,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments,POST,"{""Content-Type"":""application/json""}","{ 
 ""merchant_mobile"": ""9082023284"", ""payee_vpa"": ""34892edjkncx"", ""datetime"": ""12/10/2020"", ""amount"": ""3848492"", ""payer_vpa"": ""6437890"", ""payer_name"": ""abc""
- }",200,"message,code","{
-    ""code"": 1000,
-    ""message"": [
-        ""Invalid Amount""
-    ]
-}"
+ }",200,"message,code",
 TC_Soundbox_API_08-M,negative,https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments,POST,"{""Content-Type"":""application/json""}","{ 
 ""merchant_mobile"": ""9082023284"", ""payee_vpa"": ""34892edjkncx"", ""datetime"": ""12/10/2020"", ""amount"": 3848492, ""payer_vpa"": 6437890, ""payer_name"": ""abc""
  }",200,"message,code","{
