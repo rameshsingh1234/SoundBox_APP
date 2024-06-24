@@ -5,10 +5,12 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.application import MIMEApplication
 import os
 
+
+# test
 class ReadConfig:
     @staticmethod
     def get_config_path():
-        return os.path.abspath(os.path.join(os.path.dirname(__file__), '../Configure/config.ini'))
+        return os.path.abspath(os.path.join(os.path.dirname(__file__), '../Configure/config.init'))
 
     @staticmethod
     def get_config():
@@ -20,6 +22,7 @@ class ReadConfig:
         config = configparser.ConfigParser()
         config.read(config_path)
         return config
+
 
 def send_email(username, password, recipient_email):
     subject = "API Test Execution Report"
@@ -35,26 +38,17 @@ def send_email(username, password, recipient_email):
 
     msg.attach(MIMEText(body, 'plain'))
 
-    # Attach the test report file for API test
-    api_test_report_path = './reports/report.html'
-    zap_test_report_path = './report_html.html'
+  # Attach the test report file for api test
+    with open('./reports/report.html', 'rb') as f:
+        attach = MIMEApplication(f.read(), _subtype="html")
+        attach.add_header('Content-Disposition', 'attachment', filename="report.html")
+        msg.attach(attach)
 
-    if os.path.exists(api_test_report_path):
-        with open(api_test_report_path, 'rb') as f:
-            attach = MIMEApplication(f.read(), _subtype="html")
-            attach.add_header('Content-Disposition', 'attachment', filename="report.html")
-            msg.attach(attach)
-    else:
-        print(f"{api_test_report_path} not found, skipping attachment.")
-
-    # Attach the test report file for ZAP scan
-    if os.path.exists(zap_test_report_path):
-        with open(zap_test_report_path, 'rb') as f:
-            attach = MIMEApplication(f.read(), _subtype="html")
-            attach.add_header('Content-Disposition', 'attachment', filename="report_html.html")
-            msg.attach(attach)
-    else:
-        print(f"{zap_test_report_path} not found, skipping attachment.")
+   # # Attach the test report file for zap scan
+    with open('./report_html.html', 'rb') as f:
+        attach = MIMEApplication(f.read(), _subtype="html")
+        attach.add_header('Content-Disposition', 'attachment', filename="report_html.html")
+        msg.attach(attach)
 
     # Send the email
     try:
@@ -67,6 +61,7 @@ def send_email(username, password, recipient_email):
             print("Email sent successfully.")
     except smtplib.SMTPAuthenticationError as e:
         print(f"SMTP Authentication Error: {e.smtp_code} - {e.smtp_error.decode()}")
+
 
 if __name__ == "__main__":
     config = ReadConfig.get_config()
