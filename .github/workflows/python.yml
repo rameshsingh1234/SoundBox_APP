@@ -1,4 +1,4 @@
-name: Security Test
+name: API Testing
 on:
   push:
     branches:
@@ -7,7 +7,7 @@ on:
 jobs:
   zap_scan:
     runs-on: ubuntu-latest
-    name: Scan the web application
+    name: Test and Scan the APIs
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -44,11 +44,32 @@ jobs:
       - name: Run Pytest
         run: pytest -v -s --capture=tee-sys ./TestScript/Test_app.py --html=./reports/report.html
 
+      - name: Attach the Test Report
+        uses: actions/upload-artifact@v2
+        with:
+          name: Test Report
+          path: reports/report.html
+
+      - name: Attach the Zap Report
+        uses: actions/upload-artifact@v2
+        with:
+          name: Test Report
+          path: report_html.html
+
+
+      - name: Configure Gmail and Send Email
+        env:
+          GMAIL_USERNAME: ${{secrets.GMAIL_USERNAME}}
+          GMAIL_PASSWORD: ${{secrets.GMAIL_PASSWORD}}
+          RECIPIENT_EMAIL: ${{secrets.RECIPIENT_EMAIL}}  # Replace with the recipient's email
+        run: |
+          python Utilities/send_email_script.py $GMAIL_USERNAME $GMAIL_PASSWORD $RECIPIENT_EMAIL
 
 
 
 
-        ##test
+
+
         #
         #    - name: Send Email Report
         #      uses: actions/upload-artifact@v2
