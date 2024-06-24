@@ -1,5 +1,5 @@
 name: Test and Scan
-#test
+
 on:
   push:
     branches:
@@ -8,7 +8,7 @@ on:
 jobs:
   zap_scan:
     runs-on: ubuntu-latest
-    name: Scan the webapplication
+    name: Scan the web application
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -24,6 +24,42 @@ jobs:
           target: 'https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments/23432/summary/get'
           rules_file_name: '.zap/rules.tsv'
           cmd_options: '-a'
+
+      - name: Generate ZAP Report
+        run: |
+          docker run --rm \
+            -v $(pwd):/zap/wrk \
+            ghcr.io/zaproxy/zaproxy:stable \
+            zap-cli report \
+            -o /zap/wrk/zap_report.html \
+            -f html
+
+      - name: Upload ZAP Report
+        uses: actions/upload-artifact@v2
+        with:
+          name: zap-report
+          path: zap_report.html
+
+
+      - name: Send Email Report
+        uses: actions/upload-artifact@v2
+        with:
+          name: Test Report
+          path: /zap/wrk/zap_report.html
+
+
+
+      - name: Configure Gmail and Send Email
+        env:
+          GMAIL_USERNAME: ${{secrets.GMAIL_USERNAME}}
+          GMAIL_PASSWORD: ${{secrets.GMAIL_PASSWORD}}
+
+          RECIPIENT_EMAIL: ${{secrets.RECIPIENT_EMAIL}}  # Replace with the recipient's email
+
+        run: |
+          python Utilities/send_email_script.py $GMAIL_USERNAME $GMAIL_PASSWORD $RECIPIENT_EMAIL
+
+
 
 
 #name: Test and Scan
@@ -68,7 +104,7 @@ jobs:
 #
 #
 ##test
-#
+
 #    - name: Send Email Report
 #      uses: actions/upload-artifact@v2
 #      with:
@@ -86,4 +122,4 @@ jobs:
 #
 #      run: |
 #        python Utilities/send_email_script.py $GMAIL_USERNAME $GMAIL_PASSWORD $RECIPIENT_EMAIL
-#
+

@@ -1,9 +1,6 @@
 # Example rules.tsv for ZAP scanner
 # Each line represents a rule or directive
 
-# Rule to ignore specific URLs or paths
-IGNORE_URL	https://www.zaproxy.org/admin/
-IGNORE_URL	https://www.zaproxy.org/internal/
 
 # Rule to include specific URLs or paths
 INCLUDE_URL	https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments/23432/summary/get
