@@ -22,18 +22,21 @@ jobs:
           format: openapi
           target: 'https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com'
           cmd_options: '-a'
-
-
-
-
       - name: Generate ZAP Report
-        run: |
-          docker run --rm \
-            -v $(pwd):/zap/wrk \
-            ghcr.io/zaproxy/zaproxy:stable \
-            zap-cli report \
-            -o /zap/wrk/zap_report.html \
-            -f html
+        run: pwd \
+              ls
+
+
+
+
+#      - name: Generate ZAP Report
+#        run: |
+#          docker run --rm \
+#            -v $(pwd):/zap/wrk \
+#            ghcr.io/zaproxy/zaproxy:stable \
+#            zap-cli report \
+#            -o /zap/wrk/zap_report.html \
+#            -f html
 
       - name: Upload ZAP Report
         uses: actions/upload-artifact@v2
