@@ -42,7 +42,8 @@ jobs:
         run: cd /home/runner/work/SoundBox_APP/
 
       - name: Run Pytest
-        run: pytest -v -s --capture=tee-sys ./TestScript/Test_app.py --html=./reports/report.html
+       # run: pytest -v -s --capture=tee-sys ./TestScript/Test_app.py --html=./reports/report.html
+        run: pytest ./TestScript/Test_app.py --html-report=./reports/report.html
 
       - name: Attach the Test Report
         uses: actions/upload-artifact@v2
