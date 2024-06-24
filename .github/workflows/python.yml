@@ -1,4 +1,4 @@
-name: ZAP Security Scan and API Testing
+name: Test_app.py
 #test11
 on:
   push:
