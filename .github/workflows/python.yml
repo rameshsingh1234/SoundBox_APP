@@ -1,4 +1,4 @@
-name: Test_app.py
+name: Test and Scan
 
 on:
   push:
@@ -11,7 +11,7 @@ jobs:
 
     services:
       zap:
-        image: owasp/zap2docker-stable:2.12.0
+        image: owasp/zap2docker-weekly
         options: --entrypoint=""
         ports:
           - 8080:8080
@@ -41,7 +41,7 @@ jobs:
           docker run -d -u zap \
             --name zap \
             -p 8080:8080 \
-            -i owasp/zap2docker-stable zap.sh -daemon -host 0.0.0.0 -port 8080 -config api.disablekey=true
+            -i owasp/zap2docker-weekly zap.sh -daemon -host 0.0.0.0 -port 8080 -config api.disablekey=true
           sleep 15
 
       - name: Open URL and spider
@@ -70,6 +70,7 @@ jobs:
           ZAP_URL: http://localhost:8080
         run: |
           pytest --maxfail=1 --disable-warnings -v
+
 
 
 #jobs:
