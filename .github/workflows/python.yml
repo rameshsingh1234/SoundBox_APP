@@ -23,6 +23,11 @@ jobs:
           target: 'https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com'
 #          cmd_options: '-a'
           cmd_options: '-J report_json.json -w report_md.md -r report_html.html -a'
+      - name: test directory
+        run : pwd
+
+      - name : test
+        run : ls
 
 
 
