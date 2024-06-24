@@ -23,7 +23,7 @@ jobs:
           format: openapi
           target: 'https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com'
           rules_file_name: '.zap/rules.tsv'
-          cmd_options: '-a'
+         # cmd_options: '-a'
 
       - name: Generate ZAP Report
         run: |
