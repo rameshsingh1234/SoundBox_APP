@@ -40,6 +40,20 @@ jobs:
           name: zap-report
           path: zap_report.html
 
+      - name: Create Issue if Failures Found
+        if: ${{ steps.zap_scan.outputs.alerts_present == 'true' }}
+        run: |
+          # Your script or command to create an issue
+          echo "ZAP scan detected issues. Creating issue..."
+          # Example: Create issue using GitHub CLI
+          # gh issue create --title "ZAP Scan Findings" --body "ZAP scan detected vulnerabilities."
+
+      - name: Upload ZAP Report
+        uses: actions/upload-artifact@v2
+        with:
+          name: zap-report
+          path: zap_report.html
+
 
       - name: Send Email Report
         uses: actions/upload-artifact@v2
