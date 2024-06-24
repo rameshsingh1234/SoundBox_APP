@@ -6,7 +6,6 @@ from email.mime.application import MIMEApplication
 import os
 
 
-# test
 class ReadConfig:
     @staticmethod
     def get_config_path():
@@ -38,13 +37,13 @@ def send_email(username, password, recipient_email):
 
     msg.attach(MIMEText(body, 'plain'))
 
-   # Attach the test report file
-   #  with open('./reports/report.html', 'rb') as f:
-   #      attach = MIMEApplication(f.read(), _subtype="html")
-   #      attach.add_header('Content-Disposition', 'attachment', filename="report.html")
-   #      msg.attach(attach)
+    # Attach the test report file for API test
+    with open('./reports/report.html', 'rb') as f:
+        attach = MIMEApplication(f.read(), _subtype="html")
+        attach.add_header('Content-Disposition', 'attachment', filename="report.html")
+        msg.attach(attach)
 
-    #Attach the test report file
+    # Attach the test report file for ZAP scan
     with open('./report_html.html', 'rb') as f:
         attach = MIMEApplication(f.read(), _subtype="html")
         attach.add_header('Content-Disposition', 'attachment', filename="report_html.html")
