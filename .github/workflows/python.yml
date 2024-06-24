@@ -11,7 +11,7 @@ jobs:
 
     services:
       zap:
-        image: ictu/zap2docker-weekly
+        image: owasp/zap2docker-stable:latest
         options: --entrypoint=""
         ports:
           - 8080:8080
