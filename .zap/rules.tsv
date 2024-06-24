@@ -3,7 +3,7 @@
 
 
 # Rule to include specific URLs or paths
-INCLUDE_URL	https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments/23432/summary/get
+INCLUDE_URL
 
 # Rule to adjust attack strength
 ATTACK_STRENGTH	LOW
