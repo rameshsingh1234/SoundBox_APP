@@ -38,16 +38,22 @@ def send_email(username, password, recipient_email):
 
     msg.attach(MIMEText(body, 'plain'))
 
-  # Attach the test report file for api test
+    # Attach the test report file to gmail
     with open('./reports/Pytest_report.html', 'rb') as f:
         attach = MIMEApplication(f.read(), _subtype="html")
         attach.add_header('Content-Disposition', 'attachment', filename="Pytest_report.html")
         msg.attach(attach)
 
-   # # Attach the test report file for zap scan
+    # Attach the Security report to gmail
     with open('./report_html.html', 'rb') as f:
         attach = MIMEApplication(f.read(), _subtype="html")
         attach.add_header('Content-Disposition', 'attachment', filename="report_html.html")
+        msg.attach(attach)
+
+    # Attach the test log file to Gmail
+    with open('./test.log', 'rb') as f:
+        attach = MIMEApplication(f.read(), _subtype="log")
+        attach.add_header('Content-Disposition', 'attachment', filename="test.log")
         msg.attach(attach)
 
     # Send the email
