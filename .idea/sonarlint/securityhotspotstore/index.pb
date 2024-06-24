@@ -885,3 +885,5 @@ G.idea/sonarlint/issuestore/d/8/d8b5491f706495e2dae25cc3032be7124648088a,7\1\71
 Q.idea/sonarlint/securityhotspotstore/2/1/217e9a9249ca04de0a24e12b06443e872c61e73f,8\f\8f8772ce19a03d9ac25fc0752976d135543aa0f3
 
 Q.idea/sonarlint/securityhotspotstore/2/0/2076bf5621ca172fffe0f4bc5737ebfcc0edaf7d,8\1\816b9b49047ebac37c710c4c5c01653897761483
+>
+.zap/rules.tsv,3\0\30a72e9d34236b58646c52e892854d9c66232222
