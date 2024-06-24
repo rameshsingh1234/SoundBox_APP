@@ -391,3 +391,5 @@ G
 TestData/TEST1_Copy.csv,6\9\693fb6795442d355153981b764d1b5daa08d2ffc
 N
 Utilities/send_email_script.py,9\a\9acd78dfeff1c3ce14f72a61c42d4e46d8dbcb2e
+N
+.github/workflows/zap_scan.yml,2\2\22c34e6e8c4dfb5129bc327f5a83d99cbf438d6b

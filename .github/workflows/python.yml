@@ -1,59 +1,59 @@
-name: Test_app.py
-on:
-  push:
-    branches:
-        - master
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v3
-    - name: Setup Python
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.9  # Replace 'x' with your desired Python version
-
-    - name: Install dependencies
-      run: |
-        pip install -r requirements.txt
-
-    - name: test directory
-      run : pwd
-
-    - name : test
-      run : ls
-
-    - name : test1
-      run : cd /home/runner/work/SoundBox_APP/
-
-
-#test
-
-    - name: Run Pytest
-
-
-      run: pytest -v -s --capture=tee-sys ./TestScript/Test_app.py --html=./reports/report.html
-
-
-
-#test
-
-    - name: Send Email Report
-      uses: actions/upload-artifact@v2
-      with:
-        name: Test Report
-        path: reports/report.html
-
-
-
-    - name: Configure Gmail and Send Email
-      env:
-        GMAIL_USERNAME: ${{secrets.GMAIL_USERNAME}}
-        GMAIL_PASSWORD: ${{secrets.GMAIL_PASSWORD}}
-
-        RECIPIENT_EMAIL: ${{secrets.RECIPIENT_EMAIL}}  # Replace with the recipient's email
-
-      run: |
-        python Utilities/send_email_script.py $GMAIL_USERNAME $GMAIL_PASSWORD $RECIPIENT_EMAIL
+#name: Test_app.py
+#on:
+#  push:
+#    branches:
+#        - master
+#jobs:
+#  build:
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#    - name: Checkout repository
+#      uses: actions/checkout@v3
+#    - name: Setup Python
+#      uses: actions/setup-python@v4
+#      with:
+#        python-version: 3.9  # Replace 'x' with your desired Python version
+#
+#    - name: Install dependencies
+#      run: |
+#        pip install -r requirements.txt
+#
+#    - name: test directory
+#      run : pwd
+#
+#    - name : test
+#      run : ls
+#
+#    - name : test1
+#      run : cd /home/runner/work/SoundBox_APP/
+#
+#
+##test
+#
+#    - name: Run Pytest
+#
+#
+#      run: pytest -v -s --capture=tee-sys ./TestScript/Test_app.py --html=./reports/report.html
+#
+#
+#
+##test
+#
+#    - name: Send Email Report
+#      uses: actions/upload-artifact@v2
+#      with:
+#        name: Test Report
+#        path: reports/report.html
+#
+#
+#
+#    - name: Configure Gmail and Send Email
+#      env:
+#        GMAIL_USERNAME: ${{secrets.GMAIL_USERNAME}}
+#        GMAIL_PASSWORD: ${{secrets.GMAIL_PASSWORD}}
+#
+#        RECIPIENT_EMAIL: ${{secrets.RECIPIENT_EMAIL}}  # Replace with the recipient's email
+#
+#      run: |
+#        python Utilities/send_email_script.py $GMAIL_USERNAME $GMAIL_PASSWORD $RECIPIENT_EMAIL
