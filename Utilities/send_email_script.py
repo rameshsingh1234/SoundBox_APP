@@ -38,11 +38,12 @@ def send_email(username, password, recipient_email):
 
     msg.attach(MIMEText(body, 'plain'))
 
-    # Attach the test report file
-    # with open('./reports/report.html', 'rb') as f:
-    #     attach = MIMEApplication(f.read(), _subtype="html")
-    #     attach.add_header('Content-Disposition', 'attachment', filename="report.html")
-    #     msg.attach(attach)
+   # Attach the test report file
+    with open('./reports/report.html', 'rb') as f:
+        attach = MIMEApplication(f.read(), _subtype="html")
+        attach.add_header('Content-Disposition', 'attachment', filename="report.html")
+        msg.attach(attach)
+
     #Attach the test report file
     with open('./report_html.html', 'rb') as f:
         attach = MIMEApplication(f.read(), _subtype="html")
