@@ -1,9 +1,12 @@
-name: Test_app.py
+name: ZAP Security Scan and API Testing
 
 on:
   push:
     branches:
-      - master
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
   test-and-scan:
@@ -11,59 +14,60 @@ jobs:
 
     services:
       zap:
-        image: owasp/zap2docker-stable
+        image: owasp/zap2docker-weekly
         options: --entrypoint=""
         ports:
           - 8080:8080
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
+    - name: Checkout repository
+      uses: actions/checkout@v2
 
-      - name: Set up Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: '3.8'
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.8'
 
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
 
-      - name: Start ZAP daemon
-        run: |
-          docker run -d -u zap \
-            --name zap \
-            -p 8080:8080 \
-            -i owasp/zap2docker-stable zap.sh -daemon -host 0.0.0.0 -port 8080 -config api.disablekey=true
-          sleep 15
+    - name: Run API tests
+      env:
+        ZAP_URL: http://localhost:8080
+      run: |
+        pytest --maxfail=1 --disable-warnings -v
 
-      - name: Open URL and spider
-        run: |
-          docker exec zap zap-cli --zap-url http://localhost --zap-port 8080 open-url "https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments/23432/summary/get"
-          docker exec zap zap-cli --zap-url http://localhost --zap-port 8080 spider "https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments/23432/summary/get"
+    - name: Start ZAP daemon
+      run: |
+        docker run -d -u zap \
+          --name zap \
+          -p 8080:8080 \
+          -i owasp/zap2docker-weekly zap.sh -daemon -host 0.0.0.0 -port 8080 -config api.disablekey=true
+        sleep 15
 
-      - name: Run active scan
-        run: |
-          docker exec zap zap-cli --zap-url http://localhost --zap-port 8080 active-scan "https://u4qoxwpvtk.execute-api.us-east-1.amazonaws.com/payments/23432/summary/get"
-          docker exec zap zap-cli --zap-url http://localhost --zap-port 8080 alerts
+    - name: Open URL and spider
+      run: |
+        docker exec zap zap-cli --zap-url http://localhost --zap-port 8080 open-url "http://your-api-endpoint"
+        docker exec zap zap-cli --zap-url http://localhost --zap-port 8080 spider "http://your-api-endpoint"
 
-      - name: Generate ZAP report
-        run: |
-          docker exec zap zap-cli --zap-url http://localhost --zap-port 8080 report -o /zap/wrk/zap_report.html -f html
-          docker cp zap:/zap/wrk/zap_report.html zap_report.html
+    - name: Run active scan
+      run: |
+        docker exec zap zap-cli --zap-url http://localhost --zap-port 8080 active-scan "http://your-api-endpoint"
+        docker exec zap zap-cli --zap-url http://localhost --zap-port 8080 alerts
 
-      - name: Upload ZAP report
-        uses: actions/upload-artifact@v2
-        with:
-          name: zap-report
-          path: zap_report.html
+    - name: Generate ZAP report
+      run: |
+        docker exec zap zap-cli --zap-url http://localhost --zap-port 8080 report -o /zap/wrk/zap_report.html -f html
+        docker cp zap:/zap/wrk/zap_report.html zap_report.html
 
-      - name: Run API tests
-        env:
-          ZAP_URL: http://localhost:8080
-        run: |
-          pytest --maxfail=1 --disable-warnings -v
+    - name: Upload ZAP report
+      uses: actions/upload-artifact@v2
+      with:
+        name: zap-report
+        path: zap_report.html
+
 
 #jobs:
 #  build:
