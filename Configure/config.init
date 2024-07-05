@@ -3,7 +3,7 @@ addopts = -vs -rf --html-report=./Report/report --title='PYTEST REPORT'
 
 [DEFAULT]
 LogsDirectory = ../Logs
-CSVFilePath = ../TestData/TEST1.csv
+CSVFilePath = ../TestData/Test_Data_get_summary_payment.csv
 
 [EMAIL]
 username = ramesh.singh@tibilsolutions.com
