@@ -1,6 +1,7 @@
 Testcase ID,Testcase Type,url,method,headers,payload,expected_status_code,expected_response_keys,expected_responce_body,,,,,,,,,,,
-TC_Soundbox_API_06,Positive,https://bscytxzsc3.execute-api.ap-south-1.amazonaws.com/payments/summary/get,POST,"{""Content-Type"":""application/json""}","{
-  ""uuid"": ""1234""
+TC_Soundbox_API_06,Positive,https://bscytxzsc3.execute-api.ap-south-1.amazonaws.com/payments/summary/get,POST,"{""Content-Type"":""application/json""}","{ 
+    ""uuid"":""1234"",
+    ""date"": ""2024-07-05""
 }",200,"code,data","{
     ""code"": 2000,
     ""data"": {
@@ -19,8 +20,9 @@ TC_Soundbox_API_06-B,negative,https://bscytxzsc3.execute-api.ap-south-1.amazonaw
     ""code"": 1000,
     ""message"": ""no record found""
 }",,,,,,,,,,,
-TC_Soundbox_API_06-C,Positive,https://bscytxzsc3.execute-api.ap-south-1.amazonaws.com/payments/summary/get,POST,"{""Content-Type"":""application/json""}","{
-    ""uuid"": ""1234""
+TC_Soundbox_API_06-C,Positive,https://bscytxzsc3.execute-api.ap-south-1.amazonaws.com/payments/summary/get,POST,"{""Content-Type"":""application/json""}","{ 
+    ""uuid"":""1234"",
+    ""date"": ""2024-07-05""
 }",200,"data,code","{
     ""code"": 2000,
     ""data"": {
