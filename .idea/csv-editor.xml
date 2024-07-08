@@ -38,6 +38,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\TestData\Test_Data_get_summary_payment.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
       </map>
     </option>
   </component>
